@@ -24,13 +24,13 @@
 	function fb_login() {
 		
 	    FB.login(function(response) {
-
-	    	FB.api('/me', function(response) {
-	    		$('account_label').html('Hi, ' + response.name);
-	        });
 		    
 	        if (response.authResponse) {
 
+	        	FB.api('/me', function(response) {
+		    		$('account_label').html('Hi, ' + response.name);
+		        });
+	        	
 	        	$('#account_menu').empty();
 
 	            $("#account_menu").append("<li><a href='#'><span>Profile</span></a></li>");
@@ -38,7 +38,7 @@
 	           	$("#account_menu").append("<li><a href='#'><span>Contacts</span></a></li>");
 	           	$("#account_menu").append("<li class='last'><a class='fb_login_text' onclick='fb_logout();'><span>Logout from facebook</span></a></li>");
 	            
-	            $('#account_menu').listview('refresh');
+	            //$('#account_menu').listview('refresh');
 	            
 	        } else {
 	            // cancelled
@@ -107,7 +107,19 @@
 	    FB.getLoginStatus(function(response) {
 			
 			  if (response.status === 'connected') {
-			    // connected
+
+			  	FB.api('/me', function(response) {
+		    		$('account_label').html('Hi, ' + response.name);
+		      	});
+		        	
+	        	$('#account_menu').empty();
+
+	            $("#account_menu").append("<li><a href='#'><span>Profile</span></a></li>");
+	            $("#account_menu").append("<li><a href='#'><span>Messages</span></a></li>");
+	           	$("#account_menu").append("<li><a href='#'><span>Contacts</span></a></li>");
+	           	$("#account_menu").append("<li class='last'><a class='fb_login_text' onclick='fb_logout();'><span>Logout from facebook</span></a></li>");
+	            
+				    
 			  } else if (response.status === 'not_authorized') {
 			    // not_authorized
 				// promote to loggin
