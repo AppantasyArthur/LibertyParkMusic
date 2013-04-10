@@ -9,6 +9,7 @@
 	
 	<script src="json2.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="tms-0.4.x.js"></script>
 	<script type="text/javascript">
 
 	function fb_logout() {
@@ -216,7 +217,28 @@
 			<div class="content_main">
 				
 				<div class="display_area">
-					
+					<div id="slider">
+						<div class="slider">
+							<ul class="items">
+								<li>
+									<img class="slider_pic" src="1_test.jpg" alt=""/> 
+									<div class="banner">1</div> 
+								</li>
+								<li>
+									<img class="slider_pic" src="2_test.jpg" alt=""/> 
+									<div class="banner">2</div> 
+								</li>
+								<li>
+									<img  class="slider_pic" src="3_test.jpg" alt=""/> 
+									<div class="banner">3</div> 
+								</li>
+								
+							</ul>
+						</div>
+						<a href="#" class="btn prev button1"><span></span></a> 
+						<a href="#" class="play btn"><em>stop</em><span>play</span></a> 
+						<a href="#" class="btn next button2"><span></span></a>
+					</div>
 				</div>
 				 
 			</div> <!-- content main -->
