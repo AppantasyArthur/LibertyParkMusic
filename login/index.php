@@ -1,2 +1,19 @@
-<?php
-echo "this is login home";
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+
+	<div class="main_wrapper"> <!-- wrapper -->
+		<div class="side_bar"></div> <!-- side bar -->
+		<div></div>
+		<div class="side_bar"></div> <!-- side bar -->
+	</div>
+	
+</body>
+
+</html>
