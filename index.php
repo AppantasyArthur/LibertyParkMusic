@@ -8,8 +8,11 @@
 	<link rel="stylesheet" href="lpm-menu.css">
 	
 	<script src="json2.js"></script>
+	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="tms-0.4.x.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+	<script src="jquery.slideshow.min.js"></script>
+	
 	<script type="text/javascript">
 
 	function fb_logout() {
@@ -57,6 +60,17 @@
 	}
 
 	$(document).ready(function() {
+
+		
+		    $('.slideShow').slideShow({
+		        interval: 3,
+		        
+		        transition: {
+		            mode: 'slideshow',
+		            speed: 800
+		        }
+		    });
+		
 
 		$("#username").blur(function(){
 
@@ -180,7 +194,7 @@
 						<ul>
 						   <li class='has-sub'><a href='#'><span>NOTIFICATIONS</span></a>
 						      <ul>
-						         <li class='last'><a href='#'><span>Liberty Park Music Message</span></a></li>
+						         <li class='last'><a href='#'><span>( you don't have any message )</span></a></li>
 						      </ul>
 						   </li>
 						   <li class='has-sub'><a href='#'><span>COURSES</span></a>
@@ -217,28 +231,21 @@
 			<div class="content_main">
 				
 				<div class="display_area">
-					<div id="slider">
-						<div class="slider">
-							<ul class="items">
-								<li>
-									<img class="slider_pic" src="1_test.jpg" alt=""/> 
-									<div class="banner">1</div> 
-								</li>
-								<li>
-									<img class="slider_pic" src="2_test.jpg" alt=""/> 
-									<div class="banner">2</div> 
-								</li>
-								<li>
-									<img  class="slider_pic" src="3_test.jpg" alt=""/> 
-									<div class="banner">3</div> 
-								</li>
-								
-							</ul>
-						</div>
-						<a href="#" class="btn prev button1"><span></span></a> 
-						<a href="#" class="play btn"><em>stop</em><span>play</span></a> 
-						<a href="#" class="btn next button2"><span></span></a>
+				
+					<div class="slideShow">
+					    <ul class="slides">
+					        <li class="slide"><a><img class="slider_pic" src="11.jpg"/></a></li>
+					        <li class="slide"><a><img class="slider_pic" src="22.jpg"/></a></li>
+					        <li class="slide"><a><img class="slider_pic" src="33.jpg"/></a></li>
+					    </ul>
+					    <!-- 
+					    <ul class="pager">
+					        <li><a href="javascript:void(0);" class="prev">Previous</a></li>
+					        <li><a href="javascript:void(0);" class="next">Next</a></li>
+					    </ul>
+					     -->
 					</div>
+				
 				</div>
 				 
 			</div> <!-- content main -->
