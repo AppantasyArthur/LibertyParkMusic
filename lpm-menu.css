@@ -67,14 +67,14 @@
 	top:-1px; 
 	z-index:999; 
 } 
-#cssmenu ul li.has-sub:hover > ul, #cssmenu ul li.has-sub:hover > div{
+#cssmenu ul li.has-sub:hover > ul, #cssmenu ul li.has-sub:hover > form ul, #cssmenu ul li.has-sub:hover > div{
 	display:block;
 } 
 #cssmenu ul li.has-sub > a:hover{
 	background:#5C3D1F; 
 	border-color:#5C3D1F;
 } 
-#cssmenu ul li > ul, #cssmenu ul li > div{ 
+#cssmenu ul li > ul, #cssmenu ul li > form ul, #cssmenu ul li > div{ 
 	display:none; 
 	width:auto; 
 	position:absolute; 
@@ -85,10 +85,10 @@
 	z-index:999; 
 	
 } 
-#cssmenu ul li > ul{
+#cssmenu ul li > ul, #cssmenu ul li > form ul{
 	width:200px;
 } 
-#cssmenu ul li > ul li{
+#cssmenu ul li > ul li, #cssmenu ul li > form ul li{
 	display:block; 
 	list-style:inside none; 
 	padding:0; 
@@ -96,7 +96,7 @@
 	position:relative;
 	
 } 
-#cssmenu ul li > ul li a{ 
+#cssmenu ul li > ul li a, #cssmenu ul li > form ul li input{ 
 	outline:none; 
 	display:block; 
 	position:relative; 
@@ -106,7 +106,13 @@
 	color:#5C3D1F; 
 	text-decoration:none; 
 	/*text-shadow:1px 1px 0 rgba(0,0,0, 0.5);*/
-} 
+}
+
+.default-value{
+	
+	color:#C2AD99;
+	
+}
 
 #cssmenu, #cssmenu > ul > li > ul > li a:hover{ 
 	background:#7D644C; 
