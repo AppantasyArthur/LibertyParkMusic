@@ -15,7 +15,16 @@
 
 		FB.logout(function(response) {
 
-			console.log(JSON.stringify(response, null, 4));
+			//console.log(JSON.stringify(response, null, 4));
+			
+			$('#account_label').html('ACCOUNT');
+
+			$('#account_menu').empty();
+
+			$("#account_menu").append("<li><input class='default-value' type='text' id='username' value='username' /></li><br />");
+            $("#account_menu").append("<li><input class='default-value' type='password' id='password' value='password' /></li><br />");
+           	$("#account_menu").append("<li ><a href='#' onclick=''><span>submit</span></a></li>");
+           	$("#account_menu").append("<li class='last'><a class='fb_login_text' onclick='fb_login();'><span class=''>facebook login</span></a></li>");
 			 
 		});
 
@@ -28,7 +37,7 @@
 	        if (response.authResponse) {
 
 	        	FB.api('/me', function(response) {
-		    		$('account_label').html('Hi, ' + response.name);
+		    		$('#account_label').html('Hi, ' + response.name);
 		        });
 	        	
 	        	$('#account_menu').empty();
@@ -109,12 +118,12 @@
 			  if (response.status === 'connected') {
 
 			  	FB.api('/me', function(response) {
-		    		$('account_label').html('Hi, ' + response.name);
+		    		$('#account_label').html('Hi, ' + response.name);
 		      	});
 		        	
 	        	$('#account_menu').empty();
 
-	            $("#account_menu").append("<li><a href='#'><span>Profile</span></a></li>");
+	        	$("#account_menu").append("<li><a href='#'><span>Profile</span></a></li>");
 	            $("#account_menu").append("<li><a href='#'><span>Messages</span></a></li>");
 	           	$("#account_menu").append("<li><a href='#'><span>Contacts</span></a></li>");
 	           	$("#account_menu").append("<li class='last'><a class='fb_login_text' onclick='fb_logout();'><span>Logout from facebook</span></a></li>");
