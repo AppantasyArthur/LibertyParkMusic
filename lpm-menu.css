@@ -86,7 +86,7 @@
 	
 } 
 #cssmenu ul li > ul, #cssmenu ul li > form ul{
-	width:200px;
+	width:168px;
 } 
 #cssmenu ul li > ul li, #cssmenu ul li > form ul li{
 	display:block; 
@@ -101,11 +101,31 @@
 	display:block; 
 	position:relative; 
 	margin:0; 
-	padding:8px 20px; 
+	padding:8px 12px; 
 	font:10pt Arial, Helvetica, sans-serif; 
 	color:#5C3D1F; 
 	text-decoration:none; 
 	/*text-shadow:1px 1px 0 rgba(0,0,0, 0.5);*/
+}
+
+#cssmenu ul li > ul li a.fb_login_text{
+	
+	color: #003366;
+	
+}
+
+#cssmenu ul li > ul li a.fb_login_text:hover{
+	
+	background:#003366; 
+	background:-moz-linear-gradient(top,  #003366 0%, #003366 100%); 
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#003366), color-stop(100%,#003366)); 
+	background:-webkit-linear-gradient(top,  #003366 0%,#003366 100%); 
+	background:-o-linear-gradient(top, #003366 0%,#003366 100%); 
+	background:-ms-linear-gradient(top, #003366 0%,#003366 100%); 
+	background:linear-gradient(top,  #003366 0%,#003366 100%); 
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#003366', endColorstr='#003366',GradientType=0 ); 
+	color: #fff;
+	
 }
 
 .default-value{
@@ -138,4 +158,16 @@
 } 
 #cssmenu > ul > li > a:hover{
 	background:#436f93;
-} 
+}
+
+.fb_login_text{
+	
+	color: #003366;
+	
+}
+
+.fb_login_text:hover{
+	
+	color: #fff;
+	
+}

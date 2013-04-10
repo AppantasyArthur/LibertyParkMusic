@@ -7,8 +7,44 @@
 	<link rel="stylesheet" href="lpm-base.css">
 	<link rel="stylesheet" href="lpm-menu.css">
 	
+	<script src="json2.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript">
+
+	function fb_logout() {
+
+		FB.logout(function(response) {
+
+			console.log(JSON.stringify(response, null, 4));
+			 
+		});
+
+	}
+
+	function fb_login() {
+		
+	    FB.login(function(response) {
+
+	    	FB.api('/me', function(response) {
+	    		$('account_label').html('Hi, ' + response.name);
+	        });
+		    
+	        if (response.authResponse) {
+
+	        	$('#account_menu').empty();
+
+	            $("#account_menu").append("<li><a href='#'><span>Profile</span></a></li>");
+	            $("#account_menu").append("<li><a href='#'><span>Messages</span></a></li>");
+	           	$("#account_menu").append("<li><a href='#'><span>Contacts</span></a></li>");
+	           	$("#account_menu").append("<li class='last'><a class='fb_login_text' onclick='fb_logout();'><span>Logout from facebook</span></a></li>");
+	            
+	            $('#account_menu').listview('refresh');
+	            
+	        } else {
+	            // cancelled
+	        }
+	    });
+	}
 
 	$(document).ready(function() {
 
@@ -34,25 +70,64 @@
 
 		$('.default-value').each(function() {
 
-			   var default_value = $(this).val();
-			
-		       $(this).focus(function(){
+		   var default_value = $(this).val();
+		
+	       $(this).focus(function(){
 
-		    	   if($(this).val() == default_value) {
-		            	$(this).val('');
-		    	   }
-		               
-		       });
+	    	   if($(this).val() == default_value) {
+	            	$(this).val('');
+	    	   }
+	               
+	       });
 
 		});
 		  
 	});
-	
 
 	</script>
+	
 </head>
 
 <body>
+
+	<div id="fb-root"></div>
+	<script>
+	  // Additional JS functions here
+	  window.fbAsyncInit = function() {
+		  
+	    FB.init({
+	      appId      : '478084965579094', // App ID
+	      channelUrl : '//lpm.appantasy.com/channel.php', // Channel File
+	      status     : true, // check login status
+	      cookie     : true, // enable cookies to allow the server to access the session
+	      xfbml      : true  // parse XFBML
+	    });
+	
+	    // Additional init code here
+	    FB.getLoginStatus(function(response) {
+			
+			  if (response.status === 'connected') {
+			    // connected
+			  } else if (response.status === 'not_authorized') {
+			    // not_authorized
+				// promote to loggin
+			  } else {
+			    // not_logged_in
+			  }
+			  
+		});
+	
+	  };
+	
+	  // Load the SDK Asynchronously
+	  (function(d){
+	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement('script'); js.id = id; js.async = true;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	</script>
 
 	<div class="main_wrapper"> 
 	
@@ -97,12 +172,13 @@
 						         <li class='last'><a href='#'><span>My notes</span></a></li>
 						      </ul>
 						   </li>
-						   <li class='has-sub last'><a href='#'><span>ACCOUNT</span></a>
+						   <li class='has-sub last'><a href='#'><span id='account_label'>ACCOUNT</span></a>
 						   	<!-- <form action="<?php //echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>"> -->
-						      <ul>
+						      <ul id="account_menu">
 						      	 <li><input class="default-value" type="text" id="username" value="username" /></li><br />
 						         <li><input class="default-value" type="password" id="password" value="password" /></li><br />
-						         <li class="last"><a href="#" onclick=""><span>submit</span></a></li>
+						         <li ><a href="#" onclick=""><span>submit</span></a></li>
+						         <li class="last"><a class="fb_login_text" onclick="fb_login();"><span class="">facebook login</span></a></li>
 						      <!-- 
 						         <li><a href='#'><span>Profile</span></a></li>
 						         <li><a href='#'><span>Messages</span></a></li>
