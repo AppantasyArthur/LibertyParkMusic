@@ -92,6 +92,17 @@
            
    	    });
 
+   	    //subscribe_email
+   	    $("#subscribe_email").blur(function(){
+
+			if(!$(this).val()){
+
+				$(this).val("email address");
+				
+			}
+           
+   	    });
+
 		$('.default-value').each(function() {
 
 		   var default_value = $(this).val();
@@ -238,12 +249,27 @@
 					        <li class="slide"><a><img class="slider_pic" src="22.jpg"/></a></li>
 					        <li class="slide"><a><img class="slider_pic" src="33.jpg"/></a></li>
 					    </ul>
-					    <!-- 
-					    <ul class="pager">
-					        <li><a href="javascript:void(0);" class="prev">Previous</a></li>
-					        <li><a href="javascript:void(0);" class="next">Next</a></li>
-					    </ul>
-					     -->
+					</div>
+					
+					<div id='subject_block'>
+						<div id='subject_piano'>
+							<div class='subject_name'><span class='subject_name_text'>PIANO</span></div>
+							<div class='subject_img_block'><img class='subject_img' src='s1.jpg' /></div>
+						</div>
+						<div id='subject_guitar'>
+							<div class='subject_name'><span class='subject_name_text'>GUITAR</span></div>
+							<div class='subject_img_block'><img class='subject_img' src='s2.jpg' /></div>
+						</div>
+						<div id='subject_violin'>
+							<div class='subject_name'><span class='subject_name_text'>VIOLIN</span></div>
+							<div class='subject_img_block'><img class='subject_img' src='s3.jpg' /></div>
+						</div>
+					</div>
+					
+					<div id='subscribe_block'>
+						<div class='subscribe_label'>Send me news</div>
+						<div class='subscribe_label'><input class='default-value' type='text' id='subscribe_email' value='email address'></div>
+						<div class='subscribe_label'><input class='submit-style' type='submit' id='subscribe_button' value='OK'></div>
 					</div>
 				
 				</div>
