@@ -8,7 +8,7 @@
 	float: right;
 }
 .header-about{
-	border:1px dotted;
+	/*border:1px dotted;*/
 	width: 20%;
 	height: 100%;
 	float: left;
@@ -27,13 +27,13 @@
 	background-color:#F5F5F5;
 }
 #main-bar{
-	border:1px dotted;
+	/*border:1px dotted;*/
 	width: 100%;
 	height: 10px;
 	background-color:#E6E6E6;
 }
 #main-header{
-	border:1px dotted;
+	/*border:1px dotted;*/
 	width: 100%;
 	height: 100px;
 }
@@ -47,7 +47,7 @@
 }
 
 .display-section{
-	border:1px dotted;
+	/*border:1px dotted;*/
 	width: 1000px;
 	height: 100%;
 	margin-left:auto;
