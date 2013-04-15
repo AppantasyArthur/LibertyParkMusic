@@ -2,7 +2,31 @@
 
 #lpm-menu{
 	
-	width: 100%;
+	background: #ccc;
+	width: 588px;
 	height: 28px;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+.menu_item{
+	
+	border:1px dotted;
+	float: left;
+	
+}
+
+.menu_item ul li{
+	
+	display: none;
+	
+	
+}
+
+.menu_item:hover ul li{
+	
+	display: list-item;
+	
 	
 }

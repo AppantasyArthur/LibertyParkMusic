@@ -55,6 +55,8 @@
 	position: relative;
 }
 .main-wrapper{
+	margin-left:auto;
+	margin-right:auto;
 	border:1px dotted;
 	width: 1366px;
 }

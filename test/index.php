@@ -25,11 +25,39 @@
 	
 		$(document).ready(function() {
 
+			//console.log(JSON.stringify($('#lpm-menu').position(), null, 4));
+
 			//var data = menu;
 			
+			var menu_div_id = 'lpm-menu';
 			for(var i = 0;i < menu.header.length;i++){
 
-				console.log(JSON.stringify(menu.data[menu.header[i]], null, 4));
+				//console.log(JSON.stringify(menu.data[menu.header[i]], null, 4));
+				
+				// menu item, 並排 menu item
+				var menu_item = $(document.createElement('div'));
+				menu_item.appendTo('#' + menu_div_id);
+				menu_item.addClass('menu_item');
+				
+				// menu title
+				var menu_title = $(document.createElement('ul'));
+				menu_title.appendTo(menu_item);
+
+				var title = menu.header[i];
+				menu_title.html(title);
+
+				var items = menu.data[title];
+				for(var j = 0;j < items.length;j++){
+
+					var menu_item = $(document.createElement('li'));
+					menu_item.appendTo(menu_title);
+					
+					var item = items[j];
+					menu_item.html(item);
+
+					//menu_item.hide();
+					
+				}
 				
 			}
 			
