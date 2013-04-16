@@ -6,6 +6,7 @@
 	<meta charset='utf-8'>
 	<title></title>
 	
+	<link rel="stylesheet" href="../css/lpm-reset.css">
 	<link rel="stylesheet" href="lpm-menu-2.css">
 	
 	<script src="../javascript/json2.js"></script>
@@ -13,63 +14,38 @@
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 	<script type="text/javascript">
 
-		var menu = {
-			//length: 3,
-			header: ['first', 'second', 'third'],
-			data:{
-				'first':['item_1', 'item_2'],
-				'second':['item_1', 'item_2'],
-				'third':['item_1', 'item_2']
-			}
-		};
+		var menu = [
+			['first', 'item_11 item_11 item_11 item_11 item_11 item_11 ', 'item_12'],
+			['second', 'item_21', 'item_22'],
+			['third', 'item_31', 'item_32']
+		];
 	
 		$(document).ready(function() {
 
-			//console.log(JSON.stringify($('#lpm-menu').position(), null, 4));
-
-			//var data = menu;
-			
 			var menu_div_id = 'lpm-menu';
-			for(var i = 0;i < menu.header.length;i++){
+			for(var i = 0;i < menu.length;i++){
 
-				//console.log(JSON.stringify(menu.data[menu.header[i]], null, 4));
-				
-				// menu item, 並排 menu item
-				var menu_item = $(document.createElement('div'));
+				var menu_item = $(document.createElement('ul'));
 				menu_item.appendTo('#' + menu_div_id);
-				menu_item.addClass('menu_item');
-				
-				// menu title
-				var menu_title = $(document.createElement('ul'));
-				menu_title.appendTo(menu_item);
+				menu_item.addClass('menu-item');
 
-				var title = menu.header[i];
-				menu_title.html(title);
+				for(var j = 0;j < menu[i].length;j++){
 
-				var items = menu.data[title];
-				for(var j = 0;j < items.length;j++){
-
-					var menu_item = $(document.createElement('li'));
-					menu_item.appendTo(menu_title);
+					var menu_subitem = $(document.createElement('li'));
+					menu_subitem.appendTo(menu_item);
 					
-					var item = items[j];
-					menu_item.html(item);
-
-					//menu_item.hide();
+					if(j == 0){ // parent
+						menu_subitem.addClass('menu-parent');
+						menu_subitem.html('<div class=\'menu-parent-text\'>' + menu[i][j] + '</div>');
+					}else{ // child
+						menu_subitem.addClass('menu-child');
+						menu_subitem.html('<div class=\'menu-child-text\'>' + menu[i][j] + '</div>');
+					}
 					
 				}
 				
 			}
-			
-			//console.log(JSON.stringify(data, null, 4));
-			//console.log(JSON.stringify(data['second'], null, 4));
 
-			/*var legend_label = $(document.createElement('div'));
-			legend_label.addClass('legend_label');
-			legend_label.appendTo('#' + slider_div_id);
-			legend_label.hide();*/
-
-			
 		});
 		
 	</script>

@@ -1,32 +1,62 @@
-@CHARSET "UTF-8";
-
-#lpm-menu{
-	
-	background: #ccc;
-	width: 588px;
-	height: 28px;
-	margin-left:auto;
-	margin-right:auto;
-	
-}
-
-.menu_item{
-	
-	border:1px dotted;
-	float: left;
-	
-}
-
-.menu_item ul li{
-	
+.menu-child{
 	display: none;
 	
-	
+	width: 100%;
+	height: 80px;
+
+	position: relative;
 }
 
-.menu_item:hover ul li{
-	
-	display: list-item;
-	
-	
+.menu-parent{
+	width: 100%;
+	height: 100%;
+	position:relative;
 }
+
+
+.menu-item:hover > .menu-child{
+	display: block;
+}
+
+.menu-child:hover{
+	background: #faa;
+}
+
+.menu-item:hover > .menu-parent{
+	display: block;
+	background: #333;
+	color: #fff
+}
+
+.menu-item{
+	width: 200px;
+	height: 100%;
+	float: left;
+}
+
+#lpm-menu{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-size: 12pt;
+	width: 888px;
+	height: 35px;
+}
+
+#lpm-test{
+	width: 888px;
+	height: 128px;
+	background: #Aff;
+}
+
+.menu-parent-text{
+	position:absolute;
+	max-height: 58px;
+    bottom: 0;
+    right: 10px;
+}
+
+.menu-child-text{
+	position:absolute;
+    top: 3px;
+    left: 3px;
+}
+
