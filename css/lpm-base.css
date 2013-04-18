@@ -1,19 +1,51 @@
 @CHARSET "UTF-8";
+/* PAGE */
+.headline-text{
+	font-size: 30px;
+	font-weight: bold;
+	/*margin: 5px;*/
+}
+
+.title-text{
+	font-size: 80px;
+	position: absolute;
+	right: 0;
+}
+
+#home-wrapper{
+	width: 100%;
+	margin: 20px;
+	height: 800px;
+}
+
+#subscriber_email{
+	width: 200px;
+}
+
+#sub-news{
+	padding: 10px;
+}
+
+/* CONTENT */
+#home-adv{
+	width: 100%;
+	margin-top: 3px;
+}
 
 /* HEADER */
-.header-menu{
-	border:1px dotted;
-	width: 70%;
+#lpm-menu-wrapper{
+	width: 60%;
 	height: 100%;
 	float: right;
+	position:relative;
 }
-.header-about{
+#header-about{
 	/*border:1px dotted;*/
 	width: 20%;
 	height: 100%;
 	float: left;
 }
-.header-img{
+#header-img{
 	border:1px dotted;
 	width: 10%;
 	height: 100%;
@@ -21,6 +53,12 @@
 }
 
 /* ARCHITEC */
+#main-adv{
+	border:1px dotted;
+	width: 100%;
+	background-color:#F5F5F5;
+}
+
 #main-content{
 	border:1px dotted;
 	width: 100%;
@@ -63,5 +101,6 @@
 body{
 	width: 100%;
 	margin: 0;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 

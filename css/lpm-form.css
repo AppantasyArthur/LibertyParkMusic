@@ -1,0 +1,140 @@
+#profile-headline{
+	/*width: 100%;*/
+	height: 30px;
+	padding: 20px;
+}
+
+#profile-title{
+	position:relative;
+}
+
+.profile-button-type {
+	width: 200px;
+	background-color:#917d63;
+	border: 0px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:12px;
+	font-weight:normal;
+	padding:8px 24px;
+	text-decoration:none;
+}.profile-button-type:hover {
+	background-color:#695945;
+}.profile-button-type:active {
+	position:relative;
+	top:1px;
+}
+
+.profile-select-type{
+	background: #fff;
+	width: 100px;
+    height: 30px; 
+    border-radius: 0px;
+}
+
+#profile-photo{
+	width: 150px;
+	height: 150px;
+}
+
+#profile-photo-img{
+	width: 100%;
+	height: 100%;
+}
+
+#profile-photo, #profile-name, #profile-email, #profile-birthday, #profile-gender, #profile-interesting, #profile-submit, #profile-password, #profile-password-confirm{
+	margin: 20px 20px;
+}
+
+.profile-label-public{
+	font-weight: normal;
+}
+
+.profile-label{
+	font-weight: bold;
+	margin: 5px;
+}
+
+#profile-form{
+	/*float: left;*/
+	width: 38%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background: #cfcfcf;
+}
+
+/*#profile-title{
+	
+	float: right;
+	width: 50%;
+	height: 100%;
+}*/
+
+#profile-wrapper{
+	width: 100%;
+	height: 750px;
+	margin: 20px;
+}
+
+#profile-name-first, #profile-name-last{
+	width: 42%;
+	margin: 0px 12px 0px 0px;
+}
+
+input[type=text], input[type=password]
+{
+    background-color: #fff;
+    border:solid 1px #000;
+    color: #979797;
+    
+    padding-left: 10px;
+    
+    /*margin-right: 20px;*/
+    
+    width: 93%;
+    height: 30px;
+}
+
+/*
+input[type=button]
+{
+    background-color: #1E1E1E;
+    color: #979797;
+    height: 24px;
+    width: 103px;
+    color: #bbbbbb;
+    text-transform:uppercase;
+    box-shadow:-1px 2px #6E6B6A inset;
+}
+
+
+input[type=button], input[type=text]
+{
+    border: 0;
+    border-radius:5px;
+    font-family: Sansation,Arial;
+}
+
+#profile-gender {
+   width: 240px;
+   height: 34px;
+   overflow: hidden;
+   background: url(new_arrow.jpg) no-repeat right #ddd;
+   border: 1px solid #ccc;
+}
+
+#profile-gender select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+}
+*/
+

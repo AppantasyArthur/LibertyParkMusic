@@ -1,0 +1,23 @@
+#advs{
+	width: 100%;
+}
+
+.adv_block{
+	float: left;
+	position:relative;
+}
+
+.title_adv{
+	position:absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#sub-news{
+	margin-top: 3px;
+	height: 28px;
+}
+
+.sub_email{
+	width: 200px;
+}

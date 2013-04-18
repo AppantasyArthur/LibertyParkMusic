@@ -1,3 +1,6 @@
+<?php 
+	header( 'Location: home/' ) ;
+?>
 <!doctype html>
 <html>
 
