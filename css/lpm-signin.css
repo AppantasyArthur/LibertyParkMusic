@@ -1,0 +1,49 @@
+
+.signin-lpm-block{
+	height: 50px;
+	margin: 5px;
+	padding: 10px;
+}
+
+#signin-lpm{
+	width: 100%;
+	margin: 10px 0px;
+	background: #E6E6E6;
+}
+
+#signin-facebook-text, #signin-lpm-title, #signin-or-text{
+	font-size: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+}
+
+
+#signin-lpm-title, #signin-or-text{
+	color: black;
+}
+
+#signin-or{
+	margin: 20px;
+}
+
+#signin-facebook:hover{
+	background: #ADADD6;
+}
+
+#signin-facebook{
+	background: #4747A3;
+	color: white;
+	width: 100%;
+	height: 50px;
+	padding: 0px;
+	margin: 10px 0px;
+}
+
+#sign-in-wrapper{
+	width: 30%;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+

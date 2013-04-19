@@ -306,7 +306,7 @@
 		var inters = getCheckBoxVals('profile-interesting');
 		var pwd = $('#profile-password-input').val();
 
-		$.post(	"save_profile.php"
+		$.post(	"../users/save_profile.php"
 				,{
 					'USER_IMG': img,
 				    'USER_FIRST': first,
