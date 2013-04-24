@@ -65,12 +65,11 @@
 	background: #cfcfcf;
 }
 
-/*#profile-title{
-	
+#profile-title{
 	float: right;
 	width: 50%;
 	height: 100%;
-}*/
+}
 
 #profile-wrapper{
 	width: 100%;
@@ -138,3 +137,8 @@ input[type=button], input[type=text]
 }
 */
 
+#profile-form-show{
+	float: left;
+	width: 50%;
+	height: 100%;
+}

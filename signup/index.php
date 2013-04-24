@@ -1,6 +1,6 @@
 <?php 
 
-	$title = " Sign up";
+	$title = "Sign up";
 	$content = "
 				<div id='profile-wrapper'>
 				

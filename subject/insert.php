@@ -12,6 +12,7 @@
 	<link rel='stylesheet' href='../css/lpm-advs.css'>
 	<link rel='stylesheet' href='../css/lpm-form.css'>
 	<link rel='stylesheet' href='../css/lpm-signin.css'>
+	<link rel='stylesheet' href='../css/lpm-profile.css'>
 	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
@@ -463,7 +464,13 @@
 		
 		<div id='main-content'>
 			<div class='display-section'>
-				<?php echo $content; ?>
+				
+				<div id='new-subject-title'>
+					New Subject
+				</div>
+				<span class='new-subject-label'></span><input type='text' id='new-subject-category'>
+				
+				
 			</div><!-- display-section -->
 		</div><!-- main-content -->
 		

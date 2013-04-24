@@ -1,5 +1,6 @@
 <?php 
 
+	$index_col = "USER_INDEX";
 	$img_col  = "USER_IMG";
 	$first_col = "USER_FIRST";
 	$last_col = "USER_LAST";
