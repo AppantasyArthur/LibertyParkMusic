@@ -11,8 +11,15 @@
 	
 	if (mysqli_connect_errno()) {
 		
-	    printf("Connect failed: %s\n", mysqli_connect_error());
-	    exit();
+		$msg = "Connect failed: %s\n".mysqli_connect_error();
+		$response["msg"] = $msg;
+		$response["valid"] = false;
+		
+		$encoded = urldecode(json_encode($response));
+		exit($encoded);
+		
+	    //printf();
+	    //exit();
 	    
 	}
 

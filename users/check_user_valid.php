@@ -1,6 +1,6 @@
 <?php 
 
-	header('Content-type: application/json; charset=utf-8');
+	
 
 	include_once '../php_global/dbsetting.php';
 	
@@ -18,10 +18,20 @@
 	}else{
 		$response["msg"] = "$mysqli->affected_rows record(s)";
 		$response["valid"] = true;
+		
+		$rememberMe = $_REQUEST['memme'];
+		if($rememberMe){ // set cookie
+			//$domain = "lpm.appantasy.com";
+			$domain = "localhost";
+			setcookie('username', $email, time() + 60*60*24*365, '/', $domain);
+			setcookie('password', $pwd, time() + 60*60*24*365, '/', $domain);
+		}
+	
 	}
 	
 	$mysqli->close();
 	
+	header('Content-type: application/json; charset=utf-8');
 	$encoded = urldecode(json_encode($response));
 	exit($encoded);
 

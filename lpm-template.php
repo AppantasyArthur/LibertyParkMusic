@@ -417,11 +417,13 @@
 
 		var username = $('#signin-lpm-username').val();
 		var password = $('#signin-lpm-password').val();
+		var rememberMe = getCheckBoxVals('signin-lpm-memme');
 
 		$.post(	"../users/check_user_valid.php"
 			,{
 			    'USER_EMAIL': username,
-			    'USER_PWD': password
+			    'USER_PWD': password,
+			    'memme': rememberMe
 			}
 			,function(data, status){
 				console.log(JSON.stringify(data, null, 4));

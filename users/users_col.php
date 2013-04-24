@@ -17,8 +17,10 @@
 	
 	$users = "users";
 	
-	$pwd = sha1($_REQUEST[$pwd_col]."lpmhc");
-	$email = $_REQUEST[$email_col];
+	if(isset($_REQUEST[$pwd_col]))
+		$pwd = sha1($_REQUEST[$pwd_col]."lpmhc");
 	
-?>
+	if(isset($_REQUEST[$email_col]))
+		$email = $_REQUEST[$email_col];
 
+?>

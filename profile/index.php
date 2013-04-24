@@ -310,6 +310,8 @@
 			text: 'Sign in to your LPM account'
 		});
 
+		loadProfile();
+
 	});
 
 	function createBlock(option){
@@ -433,7 +435,7 @@
 		
 	}
 
-	$('#profile-form-show').load(function(){
+	/*$('#profile-form-show').load(function(){
 
 		$.get(	"../users/get_user_profile.php"
 			,function(data, textStatus, jqXHR){
@@ -443,7 +445,24 @@
 			}
 		);
 	
-	});
+	});*/
+
+	function loadProfile(){
+
+		$.get(	"../users/get_user_profile.php"
+			,function(data, textStatus, jqXHR){
+				//console.log(JSON.stringify(data, null, 4));
+				//console.log(JSON.stringify(textStatus, null, 4));
+				//console.log(JSON.stringify(jqXHR, null, 4));
+
+				var user_profile = data.data;
+				$('#profile-name-first').val(user_profile['USER_FIRST']);
+				$('#profile-name-last').val(user_profile['USER_LAST']);
+				
+			}
+		);
+
+	}
 	
 	
 	</script>
@@ -511,9 +530,9 @@
 							<input type='checkbox' name='profile-interesting-group' value='Violin'>Violin<br>
 							<input type='checkbox' name='profile-interesting-group' value='Others'>Others&nbsp;<input type='text' class='profile-textinput' id='profile-interesting-others'><br>
 						</div>
-						<div id='profile-submit'>
-							<input type='button' value='Create account' class='profile-button-type' onclick='saveProfile();'>
-						</div>
+						<!-- <div id='profile-submit'>
+							<input type='button' value='save update' class='profile-button-type' onclick='saveProfile();'>
+						</div> -->
 					</div>
 					<div id='profile-title'>
 						<div class='title-text'>Profile</div>

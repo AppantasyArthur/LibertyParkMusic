@@ -20,8 +20,8 @@
 					<div class='sigin-lpm-label'>Password</div>
 					<input class='signin-lpm-input' type='password' id='signin-lpm-password'>
 				</div>
-				<div class='signin-lpm-block'>
-					<input type='button' value='SIGN IN' onclick='signinLPM();'><input type='checkbox' id='signin-lpm-staysign' >Stay signed in
+				<div id='signin-lpm-memme' class='signin-lpm-block'>
+					<input type='button' value='SIGN IN' onclick='signinLPM();'><input type='checkbox' id='signin-lpm-staysign' value='1' >Stay signed in
 				</div>
 				<div class='signin-lpm-block'>
 					<a id='signin-lpm-forgetpwd-text'>Forgot your password ?</a>
