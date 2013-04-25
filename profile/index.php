@@ -101,14 +101,63 @@
 		sliderlegendResizeSmaller();
 	}
 
+	var docCookies = {
+			  getItem: function (sKey) {
+			    return unescape(document.cookie.replace(new RegExp("(?:(?:^|.*;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*)|.*"), "$1")) || null;
+			  },
+			  setItem: function (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+			    if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+			    var sExpires = "";
+			    if (vEnd) {
+			      switch (vEnd.constructor) {
+			        case Number:
+			          sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
+			          break;
+			        case String:
+			          sExpires = "; expires=" + vEnd;
+			          break;
+			        case Date:
+			          sExpires = "; expires=" + vEnd.toGMTString();
+			          break;
+			      }
+			    }
+			    document.cookie = escape(sKey) + "=" + escape(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
+			    return true;
+			  },
+			  removeItem: function (sKey, sPath) {
+			    if (!sKey || !this.hasItem(sKey)) { return false; }
+			    document.cookie = escape(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + (sPath ? "; path=" + sPath : "");
+			    return true;
+			  },
+			  hasItem: function (sKey) {
+			    return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+			  },
+			  keys: /* optional method: you can safely remove it! */ function () {
+			    var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
+			    for (var nIdx = 0; nIdx < aKeys.length; nIdx++) { aKeys[nIdx] = unescape(aKeys[nIdx]); }
+			    return aKeys;
+			  }
+			};
+
 	function buildMenu(){
 
 		var menu = [
 			['NOTIFICATIONS', '(no message)'],
 			['COURSES', 'PIANO', 'GUITAR', 'VIOLIN'],
 			['YOUR LEARNING', 'My bookmarks', 'My notes'],
-			['ACCOUNT', 'sign in']
+			['ACCOUNT', '<a class=\'menu-hyperlink\' href=\'../signin\'>sign in</a>'],
 		];
+
+		//console.log(islogin);
+		if(islogin){
+
+			<?php session_start(); ?>
+			var account_title = 'Hi, ' + '<?php echo $_SESSION['mem_name']; ?>';
+			menu[3] = [account_title, 'Profile', 'Log out'];
+		}
+
+		//console.log(document.cookie);
+		//alert(docCookies.getItem("username"));
 
 		var menu_div_id = 'lpm-menu';
 		var menu_width = $('#' + menu_div_id).width();
@@ -119,6 +168,8 @@
 			menu_item.appendTo('#' + menu_div_id);
 			menu_item.width(menu_item_width);
 			menu_item.addClass('menu-item');
+
+			
 
 			for(var j = 0;j < menu[i].length;j++){
 
@@ -415,19 +466,42 @@
 		alert('You click me !');
 	}
 
+	
+	//var username = <?php //echo $_SESSION['username']; ?>;
+	//var password = <?php //echo $_SESSION['password']; ?>;
+	var islogin = <?php 
+
+		// echo $islogin; 
+		if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+			echo "true";
+		}else{
+			echo "false";
+		}
+	
+	?>;
 	function signinLPM(){
 
 		var username = $('#signin-lpm-username').val();
 		var password = $('#signin-lpm-password').val();
+		var rememberMe = getCheckBoxVals('signin-lpm-staysign');
 
 		$.post(	"../users/check_user_valid.php"
 			,{
 			    'USER_EMAIL': username,
-			    'USER_PWD': password
+			    'USER_PWD': password,
+			    'memme': rememberMe
 			}
 			,function(data, status){
-				console.log(JSON.stringify(data, null, 4));
-				console.log(JSON.stringify(status, null, 4));
+
+				//console.log(JSON.stringify(data, null, 4));
+				//alert(data.msg);
+				if(data.valid){
+					window.location = "../profile";
+					//islogin = true;
+				}
+				
+				//
+				//console.log(JSON.stringify(status, null, 4));
 			    //console.log("Data: " + data + "\nStatus: " + status);
 			    //alert('Create success !');
 			}
@@ -451,19 +525,28 @@
 
 		$.get(	"../users/get_user_profile.php"
 			,function(data, textStatus, jqXHR){
-				//console.log(JSON.stringify(data, null, 4));
+				console.log(JSON.stringify(data, null, 4));
 				//console.log(JSON.stringify(textStatus, null, 4));
 				//console.log(JSON.stringify(jqXHR, null, 4));
 
 				var user_profile = data.data;
-				$('#profile-name-first').val(user_profile['USER_FIRST']);
-				$('#profile-name-last').val(user_profile['USER_LAST']);
+				if(user_profile != null){
+					$('#profile-name-first').val(user_profile['USER_FIRST']);
+					$('#profile-name-last').val(user_profile['USER_LAST']);
+					$('#profile-email-input').val(user_profile['USER_EMAIL']);
+					$('#profile-birthday-month').val(user_profile['USER_MONTH']);
+					$('#profile-birthday-day').val(user_profile['USER_DAY']);
+					$('#profile-birthday-year').val(user_profile['USER_YEAR']);
+					$('#profile-gender-input').val(user_profile['USER_GENDER']);
+					//$('#').val(user_profile['']);
+					//$('#').val(user_profile['']);
+				}
+				
 				
 			}
 		);
 
 	}
-	
 	
 	</script>
 	

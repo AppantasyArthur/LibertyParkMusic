@@ -107,18 +107,25 @@
 			['NOTIFICATIONS', '(no message)'],
 			['COURSES', 'PIANO', 'GUITAR', 'VIOLIN'],
 			['YOUR LEARNING', 'My bookmarks', 'My notes'],
-			['ACCOUNT', 'sign in']
+			['ACCOUNT', '<a class=\'menu-hyperlink\' href=\'../signin\'>sign in</a>']
 		];
+
+		if(islogin){
+			menu[3] = ['ACCOUNT', 'Profile'];
+		}
 
 		var menu_div_id = 'lpm-menu';
 		var menu_width = $('#' + menu_div_id).width();
 		var menu_item_width = Math.floor(menu_width / menu.length);
 		for(var i = 0;i < menu.length;i++){
 
+			
 			var menu_item = $(document.createElement('ul'));
 			menu_item.appendTo('#' + menu_div_id);
 			menu_item.width(menu_item_width);
 			menu_item.addClass('menu-item');
+
+			
 
 			for(var j = 0;j < menu[i].length;j++){
 
@@ -310,6 +317,8 @@
 			text: 'Sign in to your LPM account'
 		});
 
+		loadProfile();
+
 	});
 
 	function createBlock(option){
@@ -413,6 +422,14 @@
 		alert('You click me !');
 	}
 
+	var islogin = <?php 
+	
+	//echo $_COOKIE['username'];
+	//echo $_COOKIE['password'];
+	
+		echo "false";
+	
+	?>;
 	function signinLPM(){
 
 		var username = $('#signin-lpm-username').val();
@@ -426,13 +443,53 @@
 			    'memme': rememberMe
 			}
 			,function(data, status){
-				console.log(JSON.stringify(data, null, 4));
-				console.log(JSON.stringify(status, null, 4));
+
+				//console.log(JSON.stringify(data, null, 4));
+				//alert(data.msg);
+				if(data.valid){
+					window.location = "../profile";
+					//islogin = true;
+				}
+				
+				//console.log(JSON.stringify(data, null, 4));
+				//console.log(JSON.stringify(status, null, 4));
 			    //console.log("Data: " + data + "\nStatus: " + status);
 			    //alert('Create success !');
 			}
 		);
 		
+	}
+
+	/*$('#profile-form-show').load(function(){
+
+		$.get(	"../users/get_user_profile.php"
+			,function(data, textStatus, jqXHR){
+				console.log(JSON.stringify(data, null, 4));
+				console.log(JSON.stringify(textStatus, null, 4));
+				console.log(JSON.stringify(jqXHR, null, 4));
+			}
+		);
+	
+	});*/
+
+	function loadProfile(){
+
+		$.get(	"../users/get_user_profile.php"
+			,function(data, textStatus, jqXHR){
+				//console.log(JSON.stringify(data, null, 4));
+				//console.log(JSON.stringify(textStatus, null, 4));
+				//console.log(JSON.stringify(jqXHR, null, 4));
+
+				var user_profile = data.data;
+				if(user_profile != null){
+					$('#profile-name-first').val(user_profile['USER_FIRST']);
+					$('#profile-name-last').val(user_profile['USER_LAST']);
+				}
+				
+				
+			}
+		);
+
 	}
 	
 	

@@ -1,3 +1,12 @@
+.menu-hyperlink{
+	text-decoration: none;
+	color: #333333;	
+}
+
+.menu-child:hover .menu-hyperlink{
+	color: white;	
+}
+
 .menu-child{
 	display: none;
 	

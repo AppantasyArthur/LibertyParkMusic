@@ -6,9 +6,10 @@
 	
 	include_once 'users_col.php';
 	
-	if(isset($_COOKIE['username'])){
+	session_start();
+	if(isset($_SESSION['username'])){
 		
-		$email = $_COOKIE['username'];
+		$email = $_SESSION['username'];
 		$sql = " select * from $users where $email_col='$email' ";
 		$result = $mysqli->query($sql);
 		$row = $result->fetch_array(MYSQLI_ASSOC);
