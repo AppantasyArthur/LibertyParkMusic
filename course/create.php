@@ -12,6 +12,7 @@
 	<link rel='stylesheet' href='../css/lpm-advs.css'>
 	<link rel='stylesheet' href='../css/lpm-form.css'>
 	<link rel='stylesheet' href='../css/lpm-signin.css'>
+	<link rel='stylesheet' href='../css/lpm-course.css'>
 	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
@@ -543,6 +544,44 @@
 		);
 
 	}
+
+	function saveCourse(){
+
+		var title = $('#course-input-title').val();
+		var next = $('#course-input-next').val();
+		var goal = $('#course-input-goal').val();
+		var topcover = $('#course-input-topcover').val();
+		var trgaudi = $('#course-input-trgaudi').val();
+		var numles = $('#course-input-numles').val();
+		var recbg = $('#course-input-recbg').val();
+		var keyword = $('#course-input-keyword').val();
+		var description = $('#course-input-description').val();
+		var genen = $('#course-input-genen').val();
+		var instructor = $('#course-input-instructor').val();
+
+		$.post(	"../courses/save_course.php"
+				,{
+				    'USER_EMAIL': username,
+				    'USER_PWD': password,
+				    'memme': rememberMe
+				}
+				,function(data, status){
+
+					//console.log(JSON.stringify(data, null, 4));
+					//alert(data.msg);
+					if(data.valid){
+						window.location = "../profile";
+						//islogin = true;
+					}
+					
+					//
+					//console.log(JSON.stringify(status, null, 4));
+				    //console.log("Data: " + data + "\nStatus: " + status);
+				    //alert('Create success !');
+				}
+			);
+
+	}
 	
 	</script>
 	
@@ -574,7 +613,57 @@
 		<div id='main-content'>
 			<div class='display-section'>
 				
-				<?php echo $content; ?>
+				<div class='course-area'>
+				
+					<div class='course-input-block'>
+						Course Title<br><input type='text' class='course-input-type' id='course-input-title'>
+					</div>
+					
+					<div class='course-input-block'>
+						Instructor<br><input type='text' class='course-input-type' id='course-input-instructor'>
+					</div>
+					
+					<div class='course-input-block'>
+						Genen<br><input type='text' class='course-input-type' id='course-input-genen'>
+					</div>
+					
+					<div class='course-input-block'>
+						Description<br><input type='text' class='course-input-type' id='course-input-description'>
+					</div>
+					
+					<div class='course-input-block'>
+						Keywords<br><input type='text' class='course-input-type' id='course-input-keyword'>
+					</div>
+					
+					<div class='course-input-block'>
+						Recommended background<br><input type='text' class='course-input-type' id='course-input-recbg'>
+					</div>
+					
+					<div class='course-input-block'>
+						# of lessons included<br><input type='text' class='course-input-type' id='course-input-numles'>
+					</div>
+					
+					<div class='course-input-block'>
+						Target audience<br><input type='text' class='course-input-type' id='course-input-trgaudi'>
+					</div>
+					
+					<div class='course-input-block'>
+						Topics covered<br><input type='text' class='course-input-type' id='course-input-topcover'>
+					</div>
+					
+					<div class='course-input-block'>
+						Goal upon completion<br><input type='text' class='course-input-type' id='course-input-goal'>
+					</div>
+					
+					<div class='course-input-block'>
+						Next steps<br><input type='text' class='course-input-type' id='course-input-next'>
+					</div>
+					
+					<div class='course-input-block'>
+						<input type='button' class='course-input-type' value='submit' id='course-input-submit' onclick='saveCourse();'>
+					</div>
+					
+				</div>
 				
 			</div><!-- display-section -->
 		</div><!-- main-content -->

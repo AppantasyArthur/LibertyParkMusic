@@ -1,0 +1,9 @@
+.course-input-type{
+	width: 200px;
+}
+
+	#course-input-next, #course-input-goal, #course-input-topcover, #course-input-trgaudi
+, 	#course-input-numles, #course-input-recbg, #course-input-keyword, #course-input-description
+,	#course-input-genen, #course-input-instructor, #course-input-title{
+	width: 400px;
+}
