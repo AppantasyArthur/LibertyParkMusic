@@ -6,14 +6,9 @@
 	
 	include_once 'courses_col.php';
 	
-	
-		
-	//$pwd = sha1($_REQUEST[$pwd_col]."lpmhc");
-
-	
-	$sql = " insert into $users ($img_col, $first_col, $last_col, $email_col, $month_col, $day_col, $year_col, $gender_col, $inters_col, $lastlog_col, $pwd_col, $regdate_col) 
-						values	('$_REQUEST[$img_col]', '$_REQUEST[$first_col]', '$_REQUEST[$last_col]', '$_REQUEST[$email_col]'
-						, '$_REQUEST[$month_col]', '$_REQUEST[$day_col]', '$_REQUEST[$year_col]', '$_REQUEST[$gender_col]', '$_REQUEST[$inters_col]', NOW(), '$pwd', NOW())
+	$sql = " insert into $tbl_course ($col_course_title, $col_course_next, $col_course_goal, $col_course_tapcover, $col_course_trgaudi, $col_course_numles, $col_course_recbg, $col_course_keyword
+										,$col_course_des, $col_course_genen, $col_course_instor, $col_course_updatetime) 
+						values	('$cor_title', '$cor_next', '$cor_goal', '$cor_tapcover', '$cor_trgaudi', '$cor_numles', '$cor_recbg', '$cor_keyword', '$cor_des', '$cor_genen', '$cor_instor', NOW())
 	";
 	
 	$result = $mysqli->query($sql);

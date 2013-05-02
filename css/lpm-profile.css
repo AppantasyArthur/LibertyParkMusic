@@ -6,12 +6,13 @@
 	position: absolute;
 	bottom: 0;
 	color: green;
+	width: 200px;
 }
 
 #subject-level-title{
-	background: #35FF0D;
+	background: #1C3F77;
 	color: white;
-	border: 10px solid #35FF0D;
+	border: 10px solid #1C3F77;
 }
 
 #subject-navbar{

@@ -12,6 +12,7 @@
 	<link rel='stylesheet' href='../css/lpm-advs.css'>
 	<link rel='stylesheet' href='../css/lpm-form.css'>
 	<link rel='stylesheet' href='../css/lpm-signin.css'>
+	<link rel='stylesheet' href='../css/lpm-profile.css'>
 	<link rel='stylesheet' href='../css/lpm-course.css'>
 	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -559,7 +560,6 @@
 		var genen = $('#course-input-genen').val();
 		var instructor = $('#course-input-instructor').val();
 
-
 		<?php include_once '../courses/courses_col.php'; ?>
 		
 		$.post(	"../courses/save_course.php"
@@ -578,8 +578,8 @@
 				}
 				,function(data, status){
 
-					console.log(JSON.stringify(data, null, 4));
-					//alert(data.msg);
+					//console.log(JSON.stringify(data, null, 4));
+					alert(data.msg);
 					//if(data.valid){
 						//window.location = "../profile";
 						//islogin = true;
@@ -626,60 +626,63 @@
 				
 				<div class='course-area'>
 				
-					<div class='course-input-block'>
-						Course Title<br><input type='text' class='course-input-type' id='course-input-title'>
+					<div id='subject-headline'>
+					<div id='subject-navbar'>
+						<div id='subject-navbar-text'>PIANO > course1</div>
 					</div>
-					
-					<div class='course-input-block'>
-						Instructor<br><input type='text' class='course-input-type' id='course-input-instructor'>
+					<div id='subject-heade'>
+						<div id='subject-heade-text'>PIANO</div>
 					</div>
-					
-					<div class='course-input-block'>
-						Genen<br><input type='text' class='course-input-type' id='course-input-genen'>
+				</div>
+				<div class='subject-level-block'>
+					<div id='subject-level-title'>
+						BEGINNER
 					</div>
-					
-					<div class='course-input-block'>
-						Description<br><input type='text' class='course-input-type' id='course-input-description'>
-					</div>
-					
-					<div class='course-input-block'>
-						Keywords<br><input type='text' class='course-input-type' id='course-input-keyword'>
-					</div>
-					
-					<div class='course-input-block'>
-						Recommended background<br><input type='text' class='course-input-type' id='course-input-recbg'>
-					</div>
-					
-					<div class='course-input-block'>
-						# of lessons included<br><input type='text' class='course-input-type' id='course-input-numles'>
-					</div>
-					
-					<div class='course-input-block'>
-						Target audience<br><input type='text' class='course-input-type' id='course-input-trgaudi'>
-					</div>
-					
-					<div class='course-input-block'>
-						Topics covered<br><input type='text' class='course-input-type' id='course-input-topcover'>
-					</div>
-					
-					<div class='course-input-block'>
-						Goal upon completion<br><input type='text' class='course-input-type' id='course-input-goal'>
-					</div>
-					
-					<div class='course-input-block'>
-						Next steps<br><input type='text' class='course-input-type' id='course-input-next'>
-					</div>
-					
-					<div id='course-insert-lesson-block-wrapper' class='course-input-block'>
-						Insert Lesson<br>
-						<div class='course-insert-lesson-block'>
-							<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="230" height="135" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+					<div id='subject-level-content'>
+						<div class='subject-course-block'>
+							<div class='course-bookmark-label'>
+								<img alt="" src="">
+							</div>
+							<div class='course-info'>
+								<div class='course-name'>Course 1</div><div class='course-brief'>key signature and accidentals</div>
+								<div class='course-teacher-name'>Hung-Chang Wei</div>
+								<div class='course-uploadtime'>2013.03.03</div><div class='course-isupdate'>updated!</div>
+								<div class='course-topic'><span class='course-bold'>Topics</span>: Roman numeral analysis, triads, seventh chords</div>
+								<div class='course-goal'><span class='course-bold'>Goal</span>: Student will be able to read music and locate pitches on the keyboard</div>
+								<div class='course-reco-bg'><span class='course-bold'>Recommended background</span>: course 1, course 2, course 3</div>
+								<div class='course-nextstep'><span class='course-bold'>Next Step</span>: course 3</div>
+								<div class='course-lesson-block'>
+									<div class='course-lesson-video'>
+										<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="230" height="135" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+									</div>
+									<div class='course-lesson-description'>
+										<div class='course-lesson-title'>Lesson 1</div>
+										<div class='course-lesson-detail'>In this lesson, you will learn about key signature for all keys, and the use of accidentals to after pitches. Major and minor modes will both be covered.</div>
+									</div>
+								</div>
+								<div class='course-lesson-block'>
+									<div class='course-lesson-video'>
+										<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="230" height="135" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+									</div>
+									<div class='course-lesson-description'>
+										<div class='course-lesson-title'>Lesson 1</div>
+										<div class='course-lesson-detail'>In this lesson, you will learn about key signature for all keys, and the use of accidentals to after pitches. Major and minor modes will both be covered.</div>
+									</div>
+								</div>
+								<div class='course-lesson-block'>
+									<div class='course-lesson-video'>
+										<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="230" height="135" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+									</div>
+									<div class='course-lesson-description'>
+										<div class='course-lesson-title'>Lesson 1</div>
+										<div class='course-lesson-detail'>In this lesson, you will learn about key signature for all keys, and the use of accidentals to after pitches. Major and minor modes will both be covered.</div>
+									</div>
+								</div>
+								
+								
+							</div>
 						</div>
-						<div class='course-insert-lesson-block'></div>
-					</div>
-					
-					<div class='course-input-block'>
-						<input type='button' class='course-input-type' value='submit' id='course-input-submit' onclick='saveCourse();'>
+						
 					</div>
 					
 				</div>

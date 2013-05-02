@@ -7,3 +7,44 @@
 ,	#course-input-genen, #course-input-instructor, #course-input-title{
 	width: 400px;
 }
+
+.course-input-block, .course-input-type{
+	clear: both;
+}
+
+#course-insert-lesson-block-wrapper{
+	height: 150px;
+}
+
+.course-insert-lesson-block{
+	float: left;
+	width: 230px;
+	height: 135px;
+	border: 1px dashed;
+	
+}
+
+.course-insert-lesson-block:hover{
+
+	background: gray;
+	
+}
+
+.course-lesson-video{
+	float: left;
+	margin: 0px 27px 48px 0px;
+}
+
+.course-lesson-block{
+	margin: 17px;
+	height: 180px;
+}
+
+.course-lesson-title{
+	font: bold 22px Georgia, serif;
+	margin-bottom: 5px;
+}
+
+.course-lesson-detail{
+	font: bold 14px Lucida Sans;
+}
