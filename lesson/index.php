@@ -14,6 +14,7 @@
 	<link rel='stylesheet' href='../css/lpm-signin.css'>
 	<link rel='stylesheet' href='../css/lpm-profile.css'>
 	<link rel='stylesheet' href='../css/lpm-course.css'>
+	<link rel='stylesheet' href='../css/lpm-lesson.css'>
 	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
@@ -634,40 +635,122 @@
 						<div id='subject-heade-text'>PIANO</div>
 					</div>
 				</div>
-				<div class='subject-level-block'>
+				<div class='lesson-level-block'>
 					<div id='subject-level-title'>
 						BEGINNER
 					</div>
 					
 					<div class='lesson-block'>
 					
-						<div class='lesson-main-video'>
-						</div>
-						<div class='lesson-video-list'>
-							<div class='lesson-sub-video-block'>
+						<div class='lesson-left-block'>
+							<div class='lesson-main-video'>
+								<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="636" height="356" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 							</div>
-							<div class='lesson-sub-video-block'>
+							<div class='lesson-description-block'>
+								<div class='lesson-title'>Lesson 1</div>
+								<div class='lesson-teacher'>Hung-Chang Wei</div>
+								<div class='lesson-update-date'>2013.03.03</div>
+								<div class='lesson-description'>In this lesson, you will learn about key signature for all keys, and the use of accidentals to after pitches. Major and minor modes will both be covered.</div>
 							</div>
-							<div class='lesson-sub-video-block'>
+							<div class='lesson-file-block'>
+								<div class='lesson-file-tabs'>
+									<div class='lesson-file-tab'>Homework</div>
+									<div class='lesson-file-tab'>Share</div>
+									<div class='lesson-file-tab'>Note</div>
+								</div>
+								<div class='lesson-file-tab-content'></div>
 							</div>
-							<div class='lesson-sub-video-block'>
+							
+							<div class='lesson-comment-block'>
+								<div class='lesson-comment-input'>
+									<div id='lesson-comment-input-user-img'></div>
+									<div id='lesson-comment-input-text'>
+										<textarea id='lesson-comment-input-textarea' rows="4" cols="50"></textarea>
+									</div>
+								</div>
+								<div class='lesson-comment-list'>
+									<div class='lesson-comment'>
+										<div class='lesson-comment-user-img'></div>
+										<div class='lesson-comment-content'>comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment </div>
+										<div class='lesson-comment-date'>2013-03-03</div>
+									</div>
+									<div class='lesson-comment'>
+										<div class='lesson-comment-user-img'></div>
+										<div class='lesson-comment-content'>comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment </div>
+										<div class='lesson-comment-date'>2013-03-03</div>
+									</div>
+									<div class='lesson-comment'>
+										<div class='lesson-comment-user-img'></div>
+										<div class='lesson-comment-content'>comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment </div>
+										<div class='lesson-comment-date'>2013-03-03</div>
+									</div>
+									<div class='lesson-comment'>
+										<div class='lesson-comment-user-img'></div>
+										<div class='lesson-comment-content'>comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment </div>
+										<div class='lesson-comment-date'>2013-03-03</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						
-						<div class='lesson-description-block'>
-							<div class='lesson-title'></div>
-							<div class='lesson-teacher'></div>
-							<div class='lesson-update-date'></div>
-							<div class='lesson-description'></div>
-						</div>
-						
-						<div class='lesson-teacher-block'>
-							<div class='lesson-teacher-img'></div>
-							<div class='lesson-teacher-name'></div>
-							<div class='lesson-teacher---'></div>
-							<div class='lesson-teacher-description'></div>
+						<div class='lesson-right-block'>
+							<div class='lesson-video-list'>
+								<div class='lesson-sub-video-block'>
+									<div class='lesson-sub-video'>
+										<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="120" height="67" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+									</div>
+									<div class='lesson-sub-video-description'>
+										<div class='lesson-sub-video-name'>Lesson 2</div>
+										<div class='lesson-sub-video-teacher'>Hung-Chang Wei</div>
+										<div class='lesson-sub-video-date'>2013.03.03</div>
+									</div>
+								</div>
+								<div class='lesson-sub-video-block'>
+									<div class='lesson-sub-video'>
+										<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="120" height="67" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+									</div>
+									<div class='lesson-sub-video-description'>
+										<div class='lesson-sub-video-name'>Lesson 3</div>
+										<div class='lesson-sub-video-teacher'>Hung-Chang Wei</div>
+										<div class='lesson-sub-video-date'>2013.03.03</div>
+									</div>
+								</div>
+								<div class='lesson-sub-video-block'>
+									<div class='lesson-sub-video'>
+										<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="120" height="67" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+									</div>
+									<div class='lesson-sub-video-name'>Lesson 4</div>
+									<div class='lesson-sub-video-teacher'>Hung-Chang Wei</div>
+									<div class='lesson-sub-video-date'>2013.03.03</div>
+								</div>
+								<div class='lesson-sub-video-block'>
+									<div class='lesson-sub-video'>
+										<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="120" height="67" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+									</div>
+									<div class='lesson-sub-video-name'>Lesson 5</div>
+									<div class='lesson-sub-video-teacher'>Hung-Chang Wei</div>
+									<div class='lesson-sub-video-date'>2013.03.03</div>
+								</div>
+							</div>
+							
+							<div class='lesson-teacher-block'>
+								<div class='lesson-teacher-img'></div>
+								<div class='lesson-teacher-name'>Hung-Chang Wei</div>
+								<div class='lesson-teacher---'></div>
+								<div class='lesson-teacher-description'>In this lesson, you will learn about key signature for all keys, and the use of accidentals to after pitches. Major and minor modes will both be covered.</div>
+							</div>
+							
+							<div class='lesson-recommended-block'>
+								<div class='lesson-sub-video'>
+									<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="120" height="67" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								</div>
+								<div class='lesson-sub-video-name'>Lesson 5</div>
+								<div class='lesson-sub-video-teacher'>Hung-Chang Wei</div>
+								<div class='lesson-sub-video-date'>2013.03.03</div>
+							</div>
 						</div>
 					
+						
 					</div>
 					
 				</div>
