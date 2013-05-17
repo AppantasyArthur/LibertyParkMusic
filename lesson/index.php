@@ -594,14 +594,88 @@
 			);
 
 	}
+
+	var study_mode_hook; // =  $('#full-screen-hook');
+	function showStudyMode(){
+
+		var bodyHeight = $('body').height();
+		
+		study_mode_hook =  $('#full-screen-hook');
+		study_mode_hook.show();
+		study_mode_hook.height(bodyHeight);
+
+		$('#workspace-hook').height(bodyHeight);
+
+		$.get(	
+				'getPdfText.php'
+				,{
+					'file':'pdfText.pdf'
+				}
+				,function(data, textStatus, jqXHR){
+
+					//console.log(JSON.stringify(data, null, 4));
+					//console.log(JSON.stringify(textStatus, null, 4));
+					//console.log(JSON.stringify(jqXHR, null, 4));
+
+					$('#workspace-hook').text(data.pdftext);
+
+				}
+		);
+		
+	}
+
+	function closeStudyMode(){
+
+		study_mode_hook.hide();
+		
+	}
 	
 	</script>
 	
 </head>
 
 <body>
-
-	<div class='main-wrapper'>
+	<div id='full-screen-hook' class='full-screen-mode' onclick='closeStudyMode();'>
+		<div class='study-mode-left'>
+			<div class='study-mode-video'>
+				<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="636" height="356" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div>
+			<div class='study-mode-lesson-info'>
+				<div class='lesson-title'>Lesson 1</div>
+				<div class='lesson-teacher'>Hung-Chang Wei</div>
+				<div class='lesson-update-date'>2013.03.03</div>
+				<div class='lesson-description'>In this lesson, you will learn about key signature for all keys, and the use of accidentals to after pitches. Major and minor modes will both be covered.</div>
+			</div>
+			<div class='study-mode-lesson-works'>
+				<div class='lesson-file-tab' onclick='showStudyMode();'>Homework</div>
+				<div class='lesson-file-tab'>Share</div>
+				<div class='lesson-file-tab' onclick='showStudyNoteMode();'>Note</div>
+			</div>
+		</div>
+		<div class='study-mode-right'>
+			<div id='workspace-hook' class='study-mode-lesson-workspace'>
+				
+				<!-- <di class='study-mode-note-input-block'>
+				</di>
+				<di class='study-mode-note-list'>
+					<di class='study-mode-note'>
+						<di class='study-mode-note-content'>
+						</di>
+						<di class='study-mode-note-delete'>
+						</di>
+						<di class='study-mode-note-date'>
+						</di>
+					</di>
+					<di class='study-mode-note'>
+					</di>
+					<di class='study-mode-note'>
+					</di>
+				</di> -->
+				
+			</div>
+		</div>
+	</div>
+	<div  class='main-wrapper'>
 	
 		<div id='main-header'>
 			
@@ -628,12 +702,14 @@
 				<div class='course-area'>
 				
 					<div id='subject-headline'>
-					<div id='subject-navbar'>
-						<div id='subject-navbar-text'>PIANO > course 1 > lesson 1</div>
+						<div id='subject-navbar'>
+							<div id='subject-navbar-text'>PIANO > course 1 > lesson 1</div>
+						</div>
+						<div id='subject-heade'>
+							<div id='subject-heade-text'>PIANO</div>
+						</div>
 					</div>
-					<div id='subject-heade'>
-						<div id='subject-heade-text'>PIANO</div>
-					</div>
+					
 				</div>
 				<div class='lesson-level-block'>
 					<div id='subject-level-title'>
@@ -654,7 +730,7 @@
 							</div>
 							<div class='lesson-file-block'>
 								<div class='lesson-file-tabs'>
-									<div class='lesson-file-tab'>Homework</div>
+									<div class='lesson-file-tab' onclick='showStudyMode();'>Homework</div>
 									<div class='lesson-file-tab'>Share</div>
 									<div class='lesson-file-tab'>Note</div>
 								</div>
@@ -662,10 +738,11 @@
 							</div>
 							
 							<div class='lesson-comment-block'>
+								
 								<div class='lesson-comment-input'>
-									<div id='lesson-comment-input-user-img'></div>
-									<div id='lesson-comment-input-text'>
-										<textarea id='lesson-comment-input-textarea' rows="4" cols="50"></textarea>
+									<div class='lesson-comment-input-user-img'></div>
+									<div class='lesson-comment-input-text'>
+										<textarea id='lesson-comment-input-textarea' rows="4" cols="70"></textarea>
 									</div>
 								</div>
 								<div class='lesson-comment-list'>
@@ -736,7 +813,7 @@
 							<div class='lesson-teacher-block'>
 								<div class='lesson-teacher-img'></div>
 								<div class='lesson-teacher-name'>Hung-Chang Wei</div>
-								<div class='lesson-teacher---'></div>
+								<div class='lesson-teacher-position'></div>
 								<div class='lesson-teacher-description'>In this lesson, you will learn about key signature for all keys, and the use of accidentals to after pitches. Major and minor modes will both be covered.</div>
 							</div>
 							
@@ -751,9 +828,9 @@
 						</div>
 					
 						
-					</div>
+					</div> <!-- lesson-block -->
 					
-				</div>
+				</div> <!-- lesson-level-block -->
 				
 			</div><!-- display-section -->
 		</div><!-- main-content -->
