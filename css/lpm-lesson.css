@@ -1,3 +1,11 @@
+.study-doc{
+	
+}
+
+object{
+	border: 0px solid #1C3F77;
+}
+
 .study-mode-lesson-workspace{
 	width: 100%;
 }
@@ -6,7 +14,7 @@
 	display: none;
 	z-index: 1000;
 	background-color: black;
-	opacity: 0.95;
+	/*opacity: 0.95;*/
 	width: 100%;
 	color: white;
 	position : absolute;
