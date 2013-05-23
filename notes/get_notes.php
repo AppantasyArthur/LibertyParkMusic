@@ -12,7 +12,7 @@
 
 	$note->setDate(date("Y-m-d H:i:s"));
 	
-	$response[$note->tableName] = [$note->convert2Array(), $note->convert2Array(), $note->convert2Array()];
+	$response[$note->tableName] = array($note->convert2Array(), $note->convert2Array(), $note->convert2Array());
 	
 	$encoded = urldecode(json_encode($response));
 	exit($encoded);
