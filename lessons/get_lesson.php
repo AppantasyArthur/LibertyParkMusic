@@ -32,7 +32,7 @@
 	$mysqli->close();
 	*/
 	
-	$response["homeworks"] = ["../homeworks/LN12345/pdfTest.pdf", "../homeworks/LN12345/pdfTest.pdf"];
+	$response["homeworks"] = array("../homeworks/LN12345/pdfTest.pdf", "../homeworks/LN12345/pdfTest.pdf");
 	
 	$encoded = urldecode(json_encode($response));
 	exit($encoded);

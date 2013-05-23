@@ -13,7 +13,7 @@
 	// setDate
 	$comment->setDate('2013-05-05');
 	
-	$response["comments"] = [$comment->convert2Array(), $comment->convert2Array()];
+	$response["comments"] = array($comment->convert2Array(), $comment->convert2Array());
 	
 	$encoded = urldecode(json_encode($response));
 	exit($encoded);
