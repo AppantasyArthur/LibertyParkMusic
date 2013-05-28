@@ -13,22 +13,21 @@
 	<script src="../javascript/json2.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+	<script src="../superfish/superfish.js"></script>
 	<script type="text/javascript">
 
-		$(document).hover(function() {
-
-			/*$('#menu-crs-head-item-anchor').hover(function(){
-
-				//$('.menu-head-space');
-				$('.menu-crs-item-start').show();
-				$('.menu-crs-item').show();
-				$('#menu-head-dot-item').css('right', '-100');;
+		$(document).ready(function(){
 			
-			});*/
+			// 使用一個叫 nav 的 ul
+			$('ul.nav').superfish({
+				delay: 1000,
+				animation: {opacity: 'show'},
+				speed: 'fast',
+				autoArrows: false,
+				dropShadows: false
+			});
 			  
 		});
-		
-		
 		
 	</script>
 </head>
@@ -53,75 +52,64 @@
 				
 				<div id='lpm-menu-wrapper'>
 					<div id='lpm-menu'>
-					
-						<ul>
-							<li class='parent' onmouseover="this.className='parentOn'" onmouseout="this.className='parent'">
-								<a>NOTIFICATIONS</a>
-								<ul>
-									<li><a>Arthur say hello</a></li>
-									<li><a>Belle say hi</a></li>
-								</ul>
-							</li>
-							<li>
-								&emsp;&bull;&emsp;
-							</li>
-							<li class='parent' onmouseover="this.className='parentOn'" onmouseout="this.className='parent'">
-								<a>COURSES</a>
-								<ul>
-									<li>Start browsing here.</li>
-									<li><a>GUITAR</a></li>
-								</ul>
-							</li>
-						</ul>
-					
-						<!-- <ul id='header-menu'>
-							<li class='header-menu-item'>
-								<span class='header-menu-title'>NOTIFICATIONS</<span>
-								<ul class='header-menu-list'>
-									<li>Arthur say Hello</li>
-									<li>Belle say hi</li>
-								</ul>
-							</li>
-							<li class='header-menu-item'>
-								<span>&emsp;&bull;&emsp;</<span>
-							</li>
-							<li class='header-menu-item'>
-								<span>COURSES</span>
-								<ul>
-									<li>Start browsing here.</li>
-									<li>GUITAR</li>
-								</ul>
-							</li>
-						</ul> -->
 						
-						<!-- <div id='cssmenu'>
-						<ul>
-						   <li class='active'><a href='index.html'><span>Home</span></a></li>
-						   
-						   <li class='has-sub'><a href='#'><span>Products</span></a>
-						      <ul>
-						         <li class='has-sub'><a href='#'><span>Product 1</span></a>
-						            <ul>
-						               <li><a href='#'><span>Sub Item</span></a></li>
-						               <li class='last'><a href='#'><span>Sub Item</span></a></li>
-						            </ul>
-						         </li>
-						      </ul>
-						   </li>
-						   <li class='has-sub'>
-						   	  <a href='#'><span>About</span></a>
-						      <ul>
-						         <li class='has-sub'><a href='#'><span>Product 2</span></a>
-						            <ul>
-						               <li><a href='#'><span>Sub Item</span></a></li>
-						               <li class='last'><a href='#'><span>Sub Item</span></a></li>
-						            </ul>
-						         </li>
-						      </ul>
-						   </li>
-						   <li class='last'><a href='#'><span>Contact</span></a></li>
+						<ul class='nav'>
+							<li><a class='menu-title'>NOTIFICATIONS</a>
+								<ul id='noti-menu-list'>
+									<li class='noti-menu-item'>
+										<div class='noti-menu-item-img'><img src="../img/logo_62x62.png"></div>
+										<div class='noti-menu-item-cnt'>
+											<div class='noti-menu-item-cnt-name'>Arthur Lai</div>
+											<div class='noti-menu-item-cnt-text'>Do you love me ?</div>
+											<div class='noti-menu-item-cnt-date'>17:06 am</div>
+										</div>
+									</li>
+									<li class='noti-menu-item'>
+										<div class='noti-menu-item-img'><img src="../img/logo_62x62.png"></div>
+										<div class='noti-menu-item-cnt'>
+											<div class='noti-menu-item-cnt-name'>Belle Huang</div>
+											<div class='noti-menu-item-cnt-text'>Hi ~</div>
+											<div class='noti-menu-item-cnt-date'>last Wed.</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>&emsp;&bull;&emsp;</li>
+							<li><a class='menu-title'>COURSES</a>
+								<ul id='cors-menu-list'>
+									<li class='cors-menu-item-start'>
+										<div class='cors-menu-item-start-text'>Start browsing here.</div>
+									</li>
+									<li class='cors-menu-item'>
+										<div class='cors-menu-item-text'>GUITAR</div>
+										<div class='cors-menu-item-img'><img src=""></div>
+									</li>
+									<li class='cors-menu-item'>
+										<div class='cors-menu-item-text'>PIANO</div>
+										<div class='cors-menu-item-img'><img src=""></div>
+									</li>
+									<li class='cors-menu-item'>
+										<div class='cors-menu-item-text'>THEORY</div>
+										<div class='cors-menu-item-img'><img src=""></div>
+									</li>
+								</ul>
+							</li>
+							<li>&emsp;&bull;&emsp;</li>
+							<li><a class='menu-title'>YOUR LEARNING</a>
+								<ul id='lrng-menu-list'>
+									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My bookmarks</a></li>
+									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My notes</a></li>
+								</ul>
+							</li>
+							<li>&emsp;&bull;&emsp;</li>
+							<li><a class='menu-title'><span class='acnt-sayhello'>Hello, Arthur1980</span> ACCOUNT</a>
+								<ul id='acnt-menu-list'>
+									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Profile</a></li>
+									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Messages</a></li>
+									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Contacts</a></li>
+								</ul>
+							</li>
 						</ul>
-						</div> -->
 						
 					</div> <!-- lpm-menu -->
 				</div>	

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<meta charset='utf-8'>
+	<title></title>
+	
+	<link rel="stylesheet" href="../css/lpm-reset.css">
+	<!-- lpm-menu_201305271624.css -->
+	<link rel="stylesheet" href="menu_style_2.css">
+	
+	<script src="../javascript/json2.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+	<script src="../superfish/superfish.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			
+			// 使用一個叫 nav 的 ul
+			$('ul.nav').superfish({
+				delay: 1000,
+				animation: {opacity: 'show'},
+				speed: 'fast',
+				autoArrows: false,
+				dropShadows: false
+			});
+			  
+		});
+		
+		
+		
+	</script>
+</head>
+<body>
+
+	<ul class='nav'>
+		<li><a>NOTIFICATIONS</a>
+			<ul>
+				<li class='noti-menu-item'>Arthur say hello</li>
+				<li class='noti-menu-item'>Belle say hi</li>
+			</ul>
+		</li>
+		<li>&emsp;&bull;&emsp;</li>
+		<li><a>COURSES</a>
+			<ul>
+				<li>Start browsing here.</li>
+				<li><a href="#">GUITAR</a></li>
+				<li><a href="#">PIANO</a></li>
+				<li><a href="#">THEORY</a></li>
+			</ul>
+		</li>
+		<li>&emsp;&bull;&emsp;</li>
+		<li><a href="#">YOUR LEARNING</a>
+			<ul>
+				<li><a href="#">My bookmarks</a></li>
+				<li><a href="#">My notes</a></li>
+			</ul>
+		</li>
+		<li>&emsp;&bull;&emsp;</li>
+		<li><a href="#">ACCOUNT</a>
+			<ul>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#">Messages</a></li>
+				<li><a href="#">Contacts</a></li>
+			</ul>
+		</li>
+	</ul>
+
+</body>
+
+</html>
