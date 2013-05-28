@@ -20,7 +20,7 @@
 			
 			// 使用一個叫 nav 的 ul
 			$('ul.nav').superfish({
-				delay: 1000,
+				delay: 300,
 				animation: {opacity: 'show'},
 				speed: 'fast',
 				autoArrows: false,
@@ -54,7 +54,7 @@
 					<div id='lpm-menu'>
 						
 						<ul class='nav'>
-							<li><a class='menu-title'>NOTIFICATIONS</a>
+							<li><a class='menu-title'><div class='menu-title-text'>NOTIFICATIONS</div></a>
 								<ul id='noti-menu-list'>
 									<li class='noti-menu-item'>
 										<div class='noti-menu-item-img'><img src="../img/logo_62x62.png"></div>
@@ -74,8 +74,8 @@
 									</li>
 								</ul>
 							</li>
-							<li>&emsp;&bull;&emsp;</li>
-							<li><a class='menu-title'>COURSES</a>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
+							<li><a class='menu-title'><div class='menu-title-text'>COURSES</div></a>
 								<ul id='cors-menu-list'>
 									<li class='cors-menu-item-start'>
 										<div class='cors-menu-item-start-text'>Start browsing here.</div>
@@ -94,15 +94,15 @@
 									</li>
 								</ul>
 							</li>
-							<li>&emsp;&bull;&emsp;</li>
-							<li><a class='menu-title'>YOUR LEARNING</a>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
+							<li><a class='menu-title'><div class='menu-title-text'>YOUR LEARNING</div></a>
 								<ul id='lrng-menu-list'>
 									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My bookmarks</a></li>
 									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My notes</a></li>
 								</ul>
 							</li>
-							<li>&emsp;&bull;&emsp;</li>
-							<li><a class='menu-title'><span class='acnt-sayhello'>Hello, Arthur1980</span> ACCOUNT</a>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
+							<li><a class='menu-title'><div class='menu-title-text'><div class='acnt-sayhello'>Hello, Arthur1980 </div>ACCOUNT</div></a>
 								<ul id='acnt-menu-list'>
 									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Profile</a></li>
 									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Messages</a></li>

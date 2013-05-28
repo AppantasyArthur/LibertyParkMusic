@@ -46,7 +46,7 @@
 	float: left;
 }
 #header-img{
-	border:1px dotted;
+	/*border:1px dotted;*/
 	width: 10%;
 	height: 100%;
 	float: left;
@@ -54,13 +54,13 @@
 
 /* ARCHITEC */
 #main-adv{
-	border:1px dotted;
+	/*border:1px dotted;*/
 	width: 100%;
 	background-color:#F5F5F5;
 }
 
 #main-content{
-	border:1px dotted;
+	/*border:1px dotted;*/
 	width: 100%;
 	background-color:#F5F5F5;
 }
@@ -78,7 +78,7 @@
 
 /* BASE */
 .header-display-section{
-	border:1px dotted;
+	/*border:1px dotted;*/
 	width: 1000px;
 	margin-left:auto;
 	margin-right:auto;
@@ -95,7 +95,7 @@
 .main-wrapper{
 	margin-left:auto;
 	margin-right:auto;
-	border:1px dotted;
+	/*border:1px dotted;*/
 	width: 1366px;
 }
 body{

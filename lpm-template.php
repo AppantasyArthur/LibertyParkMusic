@@ -12,6 +12,9 @@
 	<link rel='stylesheet' href='../css/lpm-advs.css'>
 	<link rel='stylesheet' href='../css/lpm-form.css'>
 	<link rel='stylesheet' href='../css/lpm-signin.css'>
+	<link rel='stylesheet' href='../css/lpm-profile.css'>
+	<link rel='stylesheet' href='../css/lpm-course.css'>
+	<link rel='stylesheet' href='../css/lpm-lesson.css'>
 	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
@@ -331,39 +334,6 @@
 		
 	}
 	
-	$(document).ready(function() {
-
-		buildMenu();
-		
-		$('#' + slider_div_id).hover(hoverOnSlider, hoverOutSlider);
-		sliderStart();
-
-		buildAdvs();
-
-		initBirthdaySelection();
-
-		createBlock({
-			anchorId: 'signin-facebook',
-			textId: 'signin-facebook-text',
-			text: 'Sign in with Facebook'
-		});
-
-		createBlock({
-			anchorId: 'signin-or',
-			textId: 'signin-or-text',
-			text: 'or'
-		});
-
-		createBlock({
-			anchorId: 'signin-lpm-title-anchor',
-			textId: 'signin-lpm-title',
-			text: 'Sign in to your LPM account'
-		});
-
-		loadProfile();
-
-	});
-
 	function createBlock(option){
 
 		var anchor = $('#' + option.anchorId);
@@ -543,28 +513,629 @@
 		);
 
 	}
-	
+
+	function saveCourse(){
+
+		var title = $('#course-input-title').val();
+		var next = $('#course-input-next').val();
+		var goal = $('#course-input-goal').val();
+		var topcover = $('#course-input-topcover').val();
+		var trgaudi = $('#course-input-trgaudi').val();
+		var numles = $('#course-input-numles').val();
+		var recbg = $('#course-input-recbg').val();
+		var keyword = $('#course-input-keyword').val();
+		var description = $('#course-input-description').val();
+		var genen = $('#course-input-genen').val();
+		var instructor = $('#course-input-instructor').val();
+
+		<?php include_once '../courses/courses_col.php'; ?>
+		
+		$.post(	"../courses/save_course.php"
+				,{
+				    <?php echo $col_course_title; ?>: title,
+				    <?php echo $col_course_next; ?>: next,
+				    <?php echo $col_course_goal; ?>: goal,
+				    <?php echo $col_course_tapcover; ?>: topcover,
+				    <?php echo $col_course_trgaudi; ?>: trgaudi,
+				    <?php echo $col_course_numles; ?>: numles,
+				    <?php echo $col_course_recbg; ?>: recbg,
+				    <?php echo $col_course_keyword; ?>: keyword,
+				    <?php echo $col_course_des; ?>: description,
+				    <?php echo $col_course_genen; ?>: genen,
+				    <?php echo $col_course_instor; ?>: instructor
+				}
+				,function(data, status){
+
+					//console.log(JSON.stringify(data, null, 4));
+					alert(data.msg);
+					//if(data.valid){
+						//window.location = "../profile";
+						//islogin = true;
+					//}
+					
+					//
+					//console.log(JSON.stringify(status, null, 4));
+				    //console.log("Data: " + data + "\nStatus: " + status);
+				    //alert('Create success !');
+				}
+			);
+
+	}
+
+	var study_mode_hook; // =  $('#full-screen-hook');
+	function showStudyMode(homework_path){
+
+		if(getAcrobatInfo().acrobat){
+			
+			//console.log('已安裝');
+
+			var bodyHeight = $('body').height();
+			
+			study_mode_hook =  $('#full-screen-hook');
+			study_mode_hook.show();
+			study_mode_hook.height(bodyHeight);
+
+			$('#workspace-hook').height(bodyHeight);
+
+			var pdfObject = $(document.createElement('object'));
+			// data="test.pdf" type="application/pdf" width="300" height="200"
+			pdfObject.attr('data', homework_path);
+			pdfObject.attr('type', 'application/pdf');
+			pdfObject.width('100%');
+			pdfObject.height('800px');
+			//pdfObject.addClass('study-doc');
+			//pdfObject.css('background-color', 'black');
+
+			var anchor = $('#workspace-hook');
+			anchor.empty();
+			pdfObject.appendTo(anchor);
+			
+			scroll2Top();
+			
+		}else{
+			console.log('未安裝');
+			alert('Install Acrobat Reader First.');
+		}
+		
+	}
+
+	function scroll2Top(){
+
+		var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+		$body.animate({
+			scrollTop: 0
+		}, 600);
+		
+	}
+
+	function closeStudyMode(){
+
+		study_mode_hook.hide();
+		
+	}
+
+	var getAcrobatInfo = function() {
+		 
+		  var getBrowserName = function() {
+		    return this.name = this.name || function() {
+		      var userAgent = navigator ? navigator.userAgent.toLowerCase() : "other";
+		 
+		      if(userAgent.indexOf("chrome") > -1)        return "chrome";
+		      else if(userAgent.indexOf("safari") > -1)   return "safari";
+		      else if(userAgent.indexOf("msie") > -1)     return "ie";
+		      else if(userAgent.indexOf("firefox") > -1)  return "firefox";
+		      return userAgent;
+		    }();
+		  };
+		 
+		  var getActiveXObject = function(name) {
+		    try { return new ActiveXObject(name); } catch(e) {}
+		  };
+		 
+		  var getNavigatorPlugin = function(name) {
+		    for(key in navigator.plugins) {
+		      var plugin = navigator.plugins[key];
+		      if(plugin.name == name) return plugin;
+		    }
+		  };
+		 
+		  var getPDFPlugin = function() {
+		    return this.plugin = this.plugin || function() {
+		      if(getBrowserName() == 'ie') {
+		        //
+		        // load the activeX control
+		        // AcroPDF.PDF is used by version 7 and later
+		        // PDF.PdfCtrl is used by version 6 and earlier
+		        return getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl');
+		      }
+		      else {
+		        return getNavigatorPlugin('Adobe Acrobat') || getNavigatorPlugin('Chrome PDF Viewer') || getNavigatorPlugin('WebKit built-in PDF');
+		      }
+		    }();
+		  };
+		 
+		  var isAcrobatInstalled = function() {
+		    return !!getPDFPlugin();
+		  };
+		 
+		  var getAcrobatVersion = function() {
+		    try {
+		      var plugin = getPDFPlugin();
+		 
+		      if(getBrowserName() == 'ie') {
+		        var versions = plugin.GetVersions().split(',');
+		        var latest   = versions[0].split('=');
+		        return parseFloat(latest[1]);
+		      }
+		 
+		      if(plugin.version) return parseInt(plugin.version);
+		      return plugin.name
+		      
+		    }
+		    catch(e) {
+		      return null;
+		    }
+		  }
+		 
+		  //
+		  // The returned object
+		  // 
+		  return {
+		    browser:        getBrowserName(),
+		    acrobat:        isAcrobatInstalled() ? true : false,
+		    acrobatVersion: getAcrobatVersion()
+		  };
+		};
+
+		function loadLesson(){
+
+			loadHomeworks();
+
+			loadComments();
+
+		}
+
+		// paging
+		function loadComments(){
+
+			var anchor = $('#lesson-comment-list-anchor');
+			anchor.empty();
+			$.get(	"../lessons/get_lesson_comments.php"
+					,function(data, textStatus, jqXHR){
+						
+						console.log(JSON.stringify(data, null, 4));
+						
+						var lesson = data;
+						var comments = lesson.comments;
+
+						var cCount = comments.length;
+						for(var i = 0;i < cCount;i = i + 1){
+
+							var lCBlock = $(document.createElement('div'));
+							lCBlock.addClass('lesson-comment');
+
+							// img
+							var lCImg = $(document.createElement('div'));
+							lCImg.addClass('lesson-comment-user-img');
+							lCImg.html(comments[i].img);
+							lCImg.appendTo(lCBlock);
+							
+							// content
+							var lCContent = $(document.createElement('div'));
+							lCContent.addClass('lesson-comment-content');
+							lCContent.html(comments[i].content);
+							lCContent.appendTo(lCBlock);
+							
+							// date
+							var lCDate = $(document.createElement('div'));
+							lCDate.addClass('lesson-comment-date');
+							lCDate.html(comments[i].date);
+							lCDate.appendTo(lCBlock);
+							
+							lCBlock.appendTo(anchor);
+							
+						}
+						
+					}
+					
+			);
+
+		}
+
+		function loadHomeworks(){
+
+			var anchor = $('#lesson-file-tab-content-anchor');
+			anchor.empty();
+			$.get(	"../lessons/get_lesson.php"
+					,function(data, textStatus, jqXHR){
+						
+						console.log(JSON.stringify(data, null, 4));
+						
+						var lesson = data;
+						var homeworks = lesson.homeworks;
+
+						var hCount = homeworks.length;
+						for(var i = 0;i < hCount;i = i + 1){
+
+							var hPath = homeworks[i];
+							var hImg = $(document.createElement('img'));
+							hImg.attr('src', '../img/homework_icon.png');
+							hImg.attr('onClick', 'showStudyMode(\'' + hPath + '\');');
+							hImg.css('width', '100px');
+							hImg.css('height', '100px');
+							//hImg.hide();
+							hImg.appendTo(anchor);
+
+							//hImg.show('fast');
+							
+						}
+						
+					}
+					
+			);
+			
+		}
+
+		function saveComment(){
+
+			// lesson-comment-input-textarea
+			var content = $('#lesson-comment-input-textarea').val();
+
+			<?php include_once '../comments/comments.php'; ?>
+			$.post(	"../comments/save_comment.php"
+					,{
+					    <?php echo $CMT_COL_CONTENT; ?>: content 
+					}
+					,function(data, status){
+
+						console.log(JSON.stringify(data, null, 4));
+						var content = data.<?php echo $CMT_COL_CONTENT; ?>;
+						var date = data.<?php echo $CMT_COL_DATE; ?>;
+						var img = '';
+						
+						var lCBlock = $(document.createElement('div'));
+						lCBlock.addClass('lesson-comment');
+
+						// img
+						var lCImg = $(document.createElement('div'));
+						lCImg.addClass('lesson-comment-user-img');
+						lCImg.html(img);
+						lCImg.appendTo(lCBlock);
+						
+						// content
+						var lCContent = $(document.createElement('div'));
+						lCContent.addClass('lesson-comment-content');
+						lCContent.html(content);
+						lCContent.appendTo(lCBlock);
+						
+						// date
+						var lCDate = $(document.createElement('div'));
+						lCDate.addClass('lesson-comment-date');
+						lCDate.html(date);
+						lCDate.appendTo(lCBlock);
+
+						var anchor = $('#lesson-comment-list-anchor');
+						//lCBlock.appendTo(anchor);
+						anchor.prepend(lCBlock);
+						
+					}
+					
+			);
+
+		}
+
+		function initStudyModeBackground(){
+
+			var bodyHeight = $('body').height();
+			
+			var sModeBG =  $('#study-mode-background-anchor');
+			sModeBG.height(bodyHeight);
+			sModeBG.width('100%');
+			sModeBG.css('z-index', '-100');
+			sModeBG.css('position', 'absolute');
+			
+		}
+
+		function sendNote(){
+
+			var content = $('#lesson-note-input-content').val();
+
+			<?php include_once '../notes/notes.php'; ?>
+			<?php $note = new Note(); ?>
+			$.post(	"../notes/save_note.php"
+					,{
+					    <?php echo $note->COL_CONTENT; ?>: content 
+					}
+					,function(data, status){
+
+						console.log(JSON.stringify(data, null, 4));
+						//var content = data.<?php echo $note->COL_CONTENT; ?>;
+						//var date = data.<?php echo $note->COL_DATE; ?>;
+
+						var content = $(document.createElement('div'));
+						content.html(data.<?php echo $note->COL_CONTENT; ?>);
+						content.addClass('lesson-note-content');
+
+						var _delete = $(document.createElement('div'));
+						_delete.html('X');
+						_delete.addClass('lesson-note-delete');
+
+						var date = $(document.createElement('div'));
+						date.html(data.<?php echo $note->COL_DATE; ?>); 
+						date.addClass('lesson-note-date');
+
+						var block = $(document.createElement('div'));
+						block.addClass('lesson-note-block');
+						content.appendTo(block);
+						_delete.appendTo(block);
+						date.appendTo(block);
+
+						var note_list = $('#lesson-note-list-anchor');
+						note_list.prepend(block);
+						
+					}
+					
+			);
+
+		}
+
+		function showStudyNoteMode(){
+
+			initStudyModeBackground();
+			
+			var bodyHeight = $('body').height();
+			
+			study_mode_hook =  $('#full-screen-hook');
+			study_mode_hook.show();
+			study_mode_hook.height(bodyHeight);
+
+			//$('#workspace-hook').height(bodyHeight);
+
+			/*
+			<div class='lesson-note-input-block'>
+			<div class='lesson-note-input'>
+				<textarea id='lesson-note-input-content' rows="5" cols="95"></textarea>
+			</div>
+			<div class='lesson-note-input-send'>
+			</div>
+			</div>*/
+
+			var input_textarea = $(document.createElement('textarea'));
+			input_textarea.attr('id', 'lesson-note-input-content');
+			input_textarea.attr('rows', '5');
+			input_textarea.attr('cols', '95');
+
+			var input = $(document.createElement('div'));
+			input.addClass('lesson-note-input');
+
+			input_textarea.appendTo(input);
+
+			var input_send = $(document.createElement('div'));
+			input_send.addClass('lesson-note-input-send');
+			input_send.attr('onclick', 'sendNote()');
+
+			var input_block = $(document.createElement('div'));
+			input_block.addClass('lesson-note-input-block');	
+			input.appendTo(input_block);		
+			input_send.appendTo(input_block);
+			
+			var anchor = $('#workspace-hook');
+			anchor.empty();
+			input_block.appendTo(anchor);
+
+			$.get(	"../notes/get_notes.php"
+					,function(data, textStatus, jqXHR){
+						
+						console.log(JSON.stringify(data, null, 4));
+
+						var note_list = $(document.createElement('div'));
+						note_list.attr('id', 'lesson-note-list-anchor');
+						note_list.addClass('lesson-note-list');
+
+						<?php include_once '../notes/notes.php'; ?>
+						<?php $note = new Note(); ?>
+						var notes = data.notes;
+						var nCount = notes.length;
+						for(var i = 0;i < nCount;i = i + 1){
+
+							//<div class='lesson-note-block'>
+							//<div class='lesson-note-content'>note note note note note note note note </div>
+							//<div class='lesson-note-delete'>X</div>
+							//<div class='lesson-note-date'>2013-05-05</div>
+							//</div>
+
+							var content = $(document.createElement('div'));
+							content.html(notes[i].<?php echo $note->COL_CONTENT; ?>);
+							content.addClass('lesson-note-content');
+
+							var _delete = $(document.createElement('div'));
+							_delete.html('X');
+							_delete.addClass('lesson-note-delete');
+
+							var date = $(document.createElement('div'));
+							date.html(notes[i].<?php echo $note->COL_DATE; ?>); 
+							date.addClass('lesson-note-date');
+
+							var block = $(document.createElement('div'));
+							block.addClass('lesson-note-block');
+							content.appendTo(block);
+							_delete.appendTo(block);
+							date.appendTo(block);
+
+							block.appendTo(note_list);
+							
+						}
+
+						//anchor.height(note_list.height() + input_block.height() + 20);
+						note_list.appendTo(anchor);
+						
+					}
+					
+			);
+			
+			scroll2Top();
+
+		}
+
+		$(document).ready(function() {
+
+			//buildMenu();
+			
+			$('#' + slider_div_id).hover(hoverOnSlider, hoverOutSlider);
+			sliderStart();
+
+			buildAdvs();
+
+			initBirthdaySelection();
+
+			createBlock({
+				anchorId: 'signin-facebook',
+				textId: 'signin-facebook-text',
+				text: 'Sign in with Facebook'
+			});
+
+			createBlock({
+				anchorId: 'signin-or',
+				textId: 'signin-or-text',
+				text: 'or'
+			});
+
+			createBlock({
+				anchorId: 'signin-lpm-title-anchor',
+				textId: 'signin-lpm-title',
+				text: 'Sign in to your LPM account'
+			});
+
+			loadProfile();
+
+			loadLesson();
+
+		});
+
 	</script>
 	
 </head>
 
 <body>
-
-	<div class='main-wrapper'>
+	<div id='full-screen-hook' class='full-screen-mode' >
+		<div id='study-mode-background-anchor' class='study-mode-background' onclick='closeStudyMode();'></div>
+		<div class='study-mode-left'>
+			<div class='study-mode-video'>
+				<iframe src="http://player.vimeo.com/video/64570202?byline=0&amp;portrait=0&amp;badge=0" width="636" height="356" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div>
+			<div class='study-mode-lesson-info'>
+				<div class='lesson-title'>Lesson 1</div>
+				<div class='lesson-teacher'>Hung-Chang Wei</div>
+				<div class='lesson-update-date'>2013.03.03</div>
+				<div class='lesson-description'>In this lesson, you will learn about key signature for all keys, and the use of accidentals to after pitches. Major and minor modes will both be covered.</div>
+			</div>
+			<div class='study-mode-lesson-works'>
+				<div class='lesson-file-tab'><a onclick='loadHomeworks();'>Homework</a></div>
+				<div class='lesson-file-tab'>Share</div>
+				<div class='lesson-file-tab' onclick='showStudyNoteMode();'>Note</div>
+			</div>
+		</div>
+		<div class='study-mode-right'>
+			<a id='workspace-hook-anchor'></a>
+			<div id='workspace-hook' class='study-mode-lesson-workspace'>
+				
+				<!--  
+				<div class='lesson-note-list' >
+				
+					<div class='lesson-note-block'>
+						<div class='lesson-note-content'>note note note note note note note note note note </div>
+						<div class='lesson-note-delete'>X</div>
+						<div class='lesson-note-date'>2013-05-05</div>
+						
+					</div>
+				
+				</div>
+				-->
+				
+			</div>
+		</div>
+	</div>
+	<div  class='main-wrapper'>
 	
 		<div id='main-header'>
 			
 			<div class='display-section'>
+				
 				<div id='header-img'>
+					<img class='img-center' alt='Liberty Park Music' src='../img/logo_82x82.png'>
 				</div> <!-- header-img -->
+				
 				<div id='header-about'>
-					<h1>Liberty Park Music</h1>
+					<div id='header-about-menu'>About&ensp;|&ensp;People&ensp;|&ensp;Contact us&ensp;|&ensp;FAQ</div>
+					<div class='header-about-title'>LIBERTY PARK MUSIC</div>
 				</div><!-- header-about -->
+				
 				<!-- <div id='header-menu'> -->
+				
 				<div id='lpm-menu-wrapper'>
-					<div id='lpm-menu'></div> <!-- lpm-menu -->
-				</div>	
-				<!-- </div><!-- header-menu -->
+					<div id='lpm-menu'>
+						
+						<ul class='nav'>
+							<li><a class='menu-title'><div class='menu-title-text'>NOTIFICATIONS</div></a>
+								<ul id='noti-menu-list'>
+									<li class='noti-menu-item'>
+										<div class='noti-menu-item-img'><img src="../img/logo_62x62.png"></div>
+										<div class='noti-menu-item-cnt'>
+											<div class='noti-menu-item-cnt-name'>Arthur Lai</div>
+											<div class='noti-menu-item-cnt-text'>Do you love me ?</div>
+											<div class='noti-menu-item-cnt-date'>17:06 am</div>
+										</div>
+									</li>
+									<li class='noti-menu-item'>
+										<div class='noti-menu-item-img'><img src="../img/logo_62x62.png"></div>
+										<div class='noti-menu-item-cnt'>
+											<div class='noti-menu-item-cnt-name'>Belle Huang</div>
+											<div class='noti-menu-item-cnt-text'>Hi ~</div>
+											<div class='noti-menu-item-cnt-date'>last Wed.</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
+							<li><a class='menu-title'><div class='menu-title-text'>COURSES</div></a>
+								<ul id='cors-menu-list'>
+									<li class='cors-menu-item-start'>
+										<div class='cors-menu-item-start-text'>Start browsing here.</div>
+									</li>
+									<li class='cors-menu-item'>
+										<div class='cors-menu-item-text'>GUITAR</div>
+										<div class='cors-menu-item-img'><img src=""></div>
+									</li>
+									<li class='cors-menu-item'>
+										<div class='cors-menu-item-text'>PIANO</div>
+										<div class='cors-menu-item-img'><img src=""></div>
+									</li>
+									<li class='cors-menu-item'>
+										<div class='cors-menu-item-text'>THEORY</div>
+										<div class='cors-menu-item-img'><img src=""></div>
+									</li>
+								</ul>
+							</li>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
+							<li><a class='menu-title'><div class='menu-title-text'>YOUR LEARNING</div></a>
+								<ul id='lrng-menu-list'>
+									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My bookmarks</a></li>
+									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My notes</a></li>
+								</ul>
+							</li>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
+							<li><a class='menu-title'><div class='menu-title-text'><div class='acnt-sayhello'>Hello, Arthur1980 </div>ACCOUNT</div></a>
+								<ul id='acnt-menu-list'>
+									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Profile</a></li>
+									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Messages</a></li>
+									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Contacts</a></li>
+								</ul>
+							</li>
+						</ul>
+						
+					</div> <!-- lpm-menu -->
+				</div>
+				
 			</div><!-- display-section -->
 			
 		</div><!-- main-header -->

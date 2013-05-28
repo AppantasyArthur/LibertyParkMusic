@@ -1,0 +1,95 @@
+@CHARSET "UTF-8";
+
+.menu-hyperlink{
+	text-decoration: none;
+	color: #333333;	
+}
+
+.menu-child:hover .menu-hyperlink{
+	color: white;	
+}
+
+.menu-child{
+	display: none;
+	
+	width: 100%;
+	height: 28px;
+
+	position: relative;
+	z-index: 10;
+	
+	
+}
+
+.menu-parent{
+	width: 100%;
+	height: 100%;
+	position:relative;
+}
+
+
+.menu-item:hover > .menu-child{
+	display: block;
+	background: #fff;
+}
+
+.menu-child:hover{
+	background: #333333;
+}
+
+.menu-item:hover > .menu-parent{
+	display: block;
+	background: #333;
+	color: #fff
+}
+
+.menu-item{
+	width: 200px;
+	height: 100%;
+	float: left;
+}
+
+#lpm-menu{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	width: 100%;
+	height: 35px;
+	float: right;
+	
+	position:absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#lpm-test{
+	width: 888px;
+	height: 128px;
+	background: #Aff;
+}
+
+.menu-parent-text{
+	position:absolute;
+	max-height: 58px;
+    bottom: 0;
+    right: 10px;
+}
+
+li a div.menu-child-text{
+	text-decoration: none;
+	color: black;
+	padding: 5px;
+}
+
+li a div.menu-child-text:hover{
+	color: white;
+	background: #695945;
+}
+
+.menu-child-text{
+	color: black;
+	position:absolute;
+    
+    width: 95%;
+    height: 95%;
+    
+}
+
