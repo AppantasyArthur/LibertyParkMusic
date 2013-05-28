@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+
+/* header, menu */
+.menu-head-hello{
+	font-size: 8px;
+}
+
+/* header, menu, items */
+.menu-crs-head-item:hover .menu-crs-item-start, .menu-crs-head-item:hover .menu-crs-item{
+	display: block;
+}
+
+
+.menu-crs-item-start{
+	width: 250x;
+	height: 52px;
+	font-family: "Lucida Grande", sans-serif;
+	font-size: 18px;
+	font-weight:bold;
+	color: #73C8DA; 	
+	border: 1px solid gray;
+	display: none;
+	background-color: white;
+}
+
+.menu-crs-item{
+	width: 250px;
+	height: 100px;
+	font-family: Arial, sans-serif;
+	font-size: 26px;
+	font-weight:bold;
+	color: #000000; 	
+	border: 1px solid gray;
+	display: none;
+	background-color: white;
+}
+
+.menu-noti-head-item:hover .menu-noti-item{
+	display: block;
+	float: left;	
+}
+
+.menu-noti-head-item:hover .menu-head, .menu-crs-head-item:hover .menu-head{
+	position: absolute; right: 0;
+}
+
+.menu-noti-head-item:hover, .menu-crs-head-item:hover{
+	position: relative;
+}
+
+.menu-noti-item{
+	clear: both;
+	width: 192px;
+	height: 47px;
+	padding: 14px;
+	background-color: white;
+	border: 1px solid gray;
+	display: none;
+}
+
+.menu-head{
+	height: 18px;
+	font-size: 12px;
+}
+
+.menu-noti-head-item, .menu-crs-head-item, .menu-head-item{
+	float: left;
+	position: relative;
+	z-index: 1;
+}
+
+.menu-head-space{	
+	height: 18px;
+}
