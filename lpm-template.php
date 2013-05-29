@@ -6,7 +6,7 @@
 	<title>Liberty Park Music - <?php echo $title; ?></title>
 	
 	<link rel="stylesheet" href="../css/lpm-reset.css">
-	<link rel='stylesheet' href='../css/lpm-base.css'>
+	<!--  <link rel='stylesheet' href='../css/lpm-base.css'> -->
 	<link rel='stylesheet' href='../css/lpm-menu.css'>
 	<link rel='stylesheet' href='../css/lpm-slider.css'>
 	<link rel='stylesheet' href='../css/lpm-advs.css'>
@@ -49,7 +49,7 @@
 			
 			legend_bg = $(document.createElement('div'));
 			legend_bg.addClass('legend_bg');
-			legend_bg.appendTo('#' + slider_div_id);
+			//legend_bg.appendTo('#' + slider_div_id);
 			legend_bg.html('hello world, this is background');
 			legend_bg.hide();
 				
@@ -104,7 +104,7 @@
 		sliderlegendResizeSmaller();
 	}
 
-	var docCookies = {
+	/*var docCookies = {
 	  getItem: function (sKey) {
 	    return unescape(document.cookie.replace(new RegExp("(?:(?:^|.*;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*)|.*"), "$1")) || null;
 	  },
@@ -134,14 +134,11 @@
 	  },
 	  hasItem: function (sKey) {
 	    return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
-	  },
-	  keys: /* optional method: you can safely remove it! */ function () {
-	    var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
-	    for (var nIdx = 0; nIdx < aKeys.length; nIdx++) { aKeys[nIdx] = unescape(aKeys[nIdx]); }
-	    return aKeys;
 	  }
-	};
+	  
+	};*/
 
+	// deprecated, Arthur 20130529 0859
 	function buildMenu(){
 
 		var menu = [
@@ -984,7 +981,7 @@
 			$('#' + slider_div_id).hover(hoverOnSlider, hoverOutSlider);
 			sliderStart();
 
-			buildAdvs();
+			//buildAdvs();
 
 			initBirthdaySelection();
 
@@ -1149,7 +1146,6 @@
 				
 			</div><!-- display-section -->
 		</div><!-- main-content -->
-		
 	</div><!-- main-wrapper -->
 
 </body>

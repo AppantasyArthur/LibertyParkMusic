@@ -1,32 +1,25 @@
 @CHARSET "UTF-8";
 
 #lpm-slider{
-
-	width: 100%;
-	height: 520px;
+	width: 1000px;
+	/*height: 510px;*/
 	position: relative;
-	border:1px dotted;
-	
+	/*border:1px dotted;*/	
 }
 
 #lpm-slider div{
-	
 	position: absolute;
     bottom: 0;
     /*padding: 4px;*/
-	
 }
 
 #lpm-slider img{
-	
 	width: 100%;
-	height: 100%;
+	/*height: 100%;*/
 	z-index: 1;
-	
 }
 
 .legend_bg{
-	
 	width: 100%;
 	height: 28px;
 	z-index: 2;
@@ -36,22 +29,17 @@
     filter: alpha(opacity=50); /* For IE8 and earlier */
     opacity: 0.5;
     color: #fff;
-	
 }
 
 .legend_label{
-	
 	z-index: 3;
     color: #fff;
-	
 }
 
 .event_block{
-	
 	width: 100%;
 	height: 520px;
 	z-index: 4;
 	filter: alpha(opacity=0); /* For IE8 and earlier */
     opacity: 0;
-	
 }
