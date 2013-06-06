@@ -1,0 +1,149 @@
+/* people info */
+.teacher-info-moto-style{
+	font-family: Georgia;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 30px;
+	color: #000000;
+}
+.teacher-info-description{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 14px;
+	color: #000000;
+}
+.teacher-info-title{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 18px;
+	color: #000000;
+	margin-bottom: 20px;
+}
+.teacher-info-name{
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 22px;
+	color: #000000;
+	margin-bottom: 10px;
+}
+.teacher-info-detail{
+	height: 400px;
+	margin-right: 25px; 
+}
+.teacher-info-img{
+	width: 400px;
+	height: 400px;
+	margin-right: 25px; 
+	float: left;
+	background-color: gray;
+}
+.teacher-info-block{
+	width: 100%;
+	height: 400px;
+	margin-bottom: 40px;
+}
+
+/* people each block */
+.people-each-block-content-style{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 13px;
+	color: #000000;
+}
+.people-each-block-name-style{
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 13px;
+	color: #1c3f77;
+}
+.people-each-block-description{
+	width: 140px;
+	height: 85px;
+}
+.people-each-block-img{
+	width: 140px;
+	height: 140px;
+	background-color: gray;
+}
+.people-each-block{
+	width: 140px;
+	height: 225px;
+	margin-right: 23px;
+	float: left;
+}
+
+/* people block */
+.people-block{
+	width: 100%;
+	height: 450px; /* must count in javascript */
+	margin-bottom: 30px;
+}
+
+/* teachers */
+.people-teachers-style{
+	font-family: Georgia;
+	font-weight: bold;
+	font-size: 22px;
+	color: #000000;
+}
+.people-teachers-block{
+	margin-bottom: 30px;	
+}
+
+/* people-global */
+#main-content{
+	height: 1280px;	
+}
+
+/* clear float */
+.clear-float{
+	clear: both;
+}
+
+/*  */
+.content-range{
+	width: 100%;
+	padding-left: 20px;
+}
+
+/* title */
+.main-title-style{
+	font-family: "Lucida Sans";
+	font-size: 66px;
+	color: #333333;
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+}
+#main-title-block{
+	/*float: right;*/
+	width: 100%;	
+	height: 67px;
+	position: relative;
+}
+
+/* navi */
+.navi-style-past{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 14px;
+	color: #333333;
+	float: left;
+}
+.navi-style{
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 14px;
+	color: #1c3f77;
+}
+#navi-block{
+	/*float: left;*/
+	width: 100%;
+	height: 10px;
+	padding-top: 23px;
+}
+
+#content-title{
+	width: 100%;
+	height: 100px;
+}

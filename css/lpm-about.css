@@ -1,0 +1,34 @@
+/* title */
+.main-title-style{
+	font-family: "Lucida Sans";
+	font-size: 66px;
+	color: #333333;
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+}
+#main-title-block{
+	/*float: right;*/
+	width: 100%;	
+	height: 67px;
+	position: relative;
+}
+
+/* navi */
+.navi-style{
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 14px;
+	color: #1c3f77;
+}
+#navi-block{
+	/*float: left;*/
+	width: 100%;
+	height: 10px;
+	padding-top: 23px;
+}
+
+#content-title{
+	width: 100%;
+	height: 100px;
+}

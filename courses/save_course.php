@@ -14,7 +14,6 @@
 	$result = $mysqli->query($sql);
 	if(!$result){
 		
-		//$error = mysqli_error($con);
 		$response["msg"] = $mysqli->error;
 			
 	}else{

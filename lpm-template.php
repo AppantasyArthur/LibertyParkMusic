@@ -3,18 +3,23 @@
 
 <head>
 	<meta charset='utf-8'>
-	<title>Liberty Park Music - <?php echo $title; ?></title>
+	<title>Liberty Park Music - About </title>
 	
 	<link rel="stylesheet" href="../css/lpm-reset.css">
 	<!--  <link rel='stylesheet' href='../css/lpm-base.css'> -->
 	<link rel='stylesheet' href='../css/lpm-menu.css'>
 	<link rel='stylesheet' href='../css/lpm-slider.css'>
 	<link rel='stylesheet' href='../css/lpm-advs.css'>
-	<link rel='stylesheet' href='../css/lpm-form.css'>
+	<!-- <link rel='stylesheet' href='../css/lpm-form.css'> -->
 	<link rel='stylesheet' href='../css/lpm-signin.css'>
 	<link rel='stylesheet' href='../css/lpm-profile.css'>
 	<link rel='stylesheet' href='../css/lpm-course.css'>
 	<link rel='stylesheet' href='../css/lpm-lesson.css'>
+	
+	<link rel='stylesheet' href='../css/lpm-people.css'>
+	<link rel='stylesheet' href='../css/lpm-faq.css'>
+	
+	<link rel='stylesheet' href='../css/lpm-subject.css'>
 	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
@@ -974,6 +979,25 @@
 
 		}
 
+		function openAnswer(idNo){
+
+			// faq-a-2
+			// faq-answer-2
+			var a = $('#faq-a-' + idNo);
+			var answer = $('#faq-answer-' + idNo);
+
+			if (a.css('display') == 'none') {
+				// show it
+				a.show();
+				answer.show();
+			}else{
+				// hide it
+				a.hide('slow');
+				answer.hide('slow');
+			}
+			
+		}
+
 		$(document).ready(function() {
 
 			//buildMenu();
@@ -1063,7 +1087,7 @@
 				</div> <!-- header-img -->
 				
 				<div id='header-about'>
-					<div id='header-about-menu'>About&ensp;|&ensp;People&ensp;|&ensp;Contact us&ensp;|&ensp;FAQ</div>
+					<div id='header-about-menu'>About&ensp;|&ensp;<a class='about-menu-style' href='../people/'>People</a>&ensp;|&ensp;Contact us&ensp;|&ensp;<a class='about-menu-style' href='../faq/'>FAQ</a></div>
 					<div class='header-about-title'>LIBERTY PARK MUSIC</div>
 				</div><!-- header-about -->
 				

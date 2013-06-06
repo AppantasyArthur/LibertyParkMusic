@@ -43,9 +43,11 @@
 					</div>
 				</div>
 				<div id='sub-news'>
-					<div class='sub-news-label'>Send me news</div>
-					<input type='text' class='sub_email' id='subscriber_email'>
-					<input type='button' value='OK' >
+					<div class='sub-news-label'>
+						<div class='sub-news-label-text'>Send me news</div>
+					</div>
+					<input type='text' class='sub-email' id='subscriber_email'>
+					<input type='button' class='sub-ok' value='OK' >
 				</adv>
 			</div>
 		</div>			

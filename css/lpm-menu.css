@@ -1,3 +1,38 @@
+/* subscribe news */
+.sub-ok{
+	width: 60px;
+	height: 40px;
+	color: white;
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 20px;
+	background-color: #5A483B;
+}
+.sub-email{
+	width: 300px;
+	height: 33px;
+	margin-right: 20px;
+}
+.sub-news-label-text{
+	margin: 10px 0px;
+}
+.sub-news-label{
+	height: 40px;
+	margin-right: 20px;
+	font-family: "Lucida Grande";
+	font-weight: 700;
+	font-size: 13px;
+	color: black;
+}
+.sub-news-label
+,.sub-email
+,.sub-ok{
+	float: left;
+}
+#sub-news{
+	height: 40px;	
+}
+
 /* dot item */
 .menu-dot-item{
 	
@@ -9,13 +44,14 @@
 	margin: 14px 28px;	
 }
 
-
 .acnt-sayhello{
 	font-family: "Lucida Grande";
 	font-weight: normal;
 	font-size: 8px;
 	color: black;
 	display: inline;
+	top: -2px;
+	position: relative;
 }
 
 .acnt-menu-item:hover
@@ -157,10 +193,11 @@ ul.nav li.sfHover ul#noti-menu-list{
 }
 
 .menu-dot-item-text{
+	font-weight: 400;
 	padding: 10px 0px;
 }
 .menu-title-text{
-	padding: 10px 15px;
+	padding: 10px 10px;
 }
 
 /***/
@@ -169,7 +206,8 @@ ul.nav{ /* ID 是 nav 的清單 */
 	margin: 0;
 	padding: 0;
 	font-size: 12px;
-	font-family: "Lucida Sans Unicode", "Demibold Roman", sans-serif;
+	font-family: "Lucida Sans Unicode", sans-serif;
+	font-weight: 600;
 }
 
 /* 名叫 nav 的 ul 下的 li */
