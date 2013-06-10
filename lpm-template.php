@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset='utf-8'>
-	<title>Liberty Park Music - About </title>
+	<title><?php echo $title; ?></title>
 	
 	<link rel="stylesheet" href="../css/lpm-reset.css">
 	<!--  <link rel='stylesheet' href='../css/lpm-base.css'> -->
@@ -23,6 +23,7 @@
 	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+	<script src="../superfish/superfish.js"></script>
 	<script type="text/javascript">
 	var legend_bg;
 	var i = 0;
@@ -998,9 +999,61 @@
 			
 		}
 
+		function bookmarkCourse(ele){
+			
+			var jq_ele = $(ele);
+			var jq_ele_imgsrc = jq_ele.attr('src');
+			var jq_ele_cid = jq_ele.attr('id').split('-');
+			if(jq_ele_imgsrc == 'bookmark_unselect.png'){
+
+				//console.log(jq_ele_cid[2]);
+				//console.log('bookmark_unselect');
+				$.get(	"../courses/bookmark_course.php"
+						,{
+							course_id: jq_ele_cid[2],
+							member_id: 111,
+							action: 'bookmark'
+						},function(data, textStatus, jqXHR){
+							
+							//console.log(JSON.stringify(data, null, 4));
+							jq_ele.attr('src', 'bookmark_selected.png');
+							
+							
+						}
+						
+				);
+				
+			}else{
+				
+				// user wish to unbk
+				$.get(	"../courses/bookmark_course.php"
+						,{
+							bookmark_id: 1,
+							action: 'unbookmark'
+						},function(data, textStatus, jqXHR){
+							
+							//console.log(JSON.stringify(data, null, 4));
+							jq_ele.attr('src', 'bookmark_unselect.png');
+							
+						}
+						
+				);
+				
+			}
+		}
+
 		$(document).ready(function() {
 
 			//buildMenu();
+			// 使用一個叫 nav 的 ul
+			$('ul.nav').superfish({
+				//delay: 200,
+				animation: {opacity: 'show'},
+				speed: 'fast',
+				speedOut: 'fast',
+				autoArrows: false,
+				dropShadows: false
+			});
 			
 			$('#' + slider_div_id).hover(hoverOnSlider, hoverOutSlider);
 			sliderStart();
@@ -1132,16 +1185,22 @@
 										<div class='cors-menu-item-start-text'>Start browsing here.</div>
 									</li> -->
 									<li class='cors-menu-item'>
-										<div class='cors-menu-item-text'>Guitar</div>
-										<!-- <div class='cors-menu-item-img'><img src=""></div> -->
+										<a class='hyper-link-menu-item' href='../subject/?subject=guitar'>
+											<div class='cors-menu-item-text'>Guitar</div>
+											<!-- <div class='cors-menu-item-img'><img src=""></div> -->
+										</a>
 									</li>
 									<li class='cors-menu-item'>
-										<div class='cors-menu-item-text'>Piano</div>
-										<!-- <div class='cors-menu-item-img'><img src=""></div> -->
+										<a class='hyper-link-menu-item' href='../subject/?subject=guitar'>
+											<div class='cors-menu-item-text'>Piano</div>
+											<!-- <div class='cors-menu-item-img'><img src=""></div> -->
+										</a>
 									</li>
 									<li class='cors-menu-item'>
-										<div class='cors-menu-item-text'>Theory</div>
-										<!-- <div class='cors-menu-item-img'><img src=""></div> -->
+										<a class='hyper-link-menu-item' href='../subject/?subject=guitar'>
+											<div class='cors-menu-item-text'>Theory</div>
+											<!-- <div class='cors-menu-item-img'><img src=""></div> -->
+										</a>
 									</li>
 								</ul>
 							</li>
@@ -1150,14 +1209,14 @@
 									<div class='menu-title-text-lrng'>YOUR LEARNING</div>
 								</a>
 								<ul id='lrng-menu-list'>
-									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My bookmarks</a></li>
-									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My notes</a></li>
+									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">Your bookmarks</a></li>
+									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">Your notes</a></li>
 								</ul>
 							</li>
 							<li class='menu-dot-item'><div class='menu-dot-item-text'>&bull;</div></li>
 							<li><a class='menu-title'>
 									<div class='menu-title-text-acnt'>
-										<div class='acnt-sayhello'>Hello, Arthur1980 </div>ACCOUNT
+										<div class='acnt-sayhello'>Hello, Arthur1980&nbsp;&nbsp;&nbsp;</div>ACCOUNT
 									</div>
 								</a>
 								<ul id='acnt-menu-list'>

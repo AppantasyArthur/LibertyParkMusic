@@ -13,11 +13,14 @@
 	
 	$act = $_REQUEST["action"];
 	
-	if(act == "bookmark"){
+	if(strcmp($act,"bookmark") == 0){
 		$cid = $_REQUEST["course_id"];
 		$mid = $_REQUEST["member_id"];
 		$sql = " insert into bookmarks (BK_MID, BK_CID, BK_TIME)
 								values ('$mid', '$cid', NOW()) ";
+		$response["cid"] = $cid;
+		$response["mid"] = $mid;
+		$response["sql"] = $sql;
 	}else{
 		$bkid = $_REQUEST["bookmark_id"];
 		$sql = " delete from bookmarks where BK_ID='$bkid' ";
@@ -28,7 +31,7 @@
 		$response["msg"] = $mysqli->error;
 	}else{
 	
-		if(act == "bookmark"){
+		if(strcmp($act,"bookmark") == 0){
 			
 			$sql = " select BK_ID from bookmarks where BK_MID='$mid' and BK_CID='$cid' ";
 			if ($stmt = $mysqli->prepare($sql)) {

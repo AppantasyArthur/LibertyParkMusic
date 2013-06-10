@@ -54,12 +54,14 @@
 	position: relative;
 }
 
-.acnt-menu-item:hover
+.cors-menu-item:hover
+,.acnt-menu-item:hover
 ,.lrng-menu-item:hover{
 	background-color: #522900;
 }
-.acnt-menu-item:hover  a
-,.lrng-menu-item:hover  a{
+.cors-menu-item:hover div
+,.acnt-menu-item:hover a
+,.lrng-menu-item:hover a{
 	color: white;
 }
 
@@ -86,10 +88,14 @@ ul.nav li.sfHover ul#lrng-menu-list{
 
 .lrng-menu-item-text{
 	display: block;
-	margin: 12px 25px;
+	margin-left: 18px;
+	margin-top: 12px;
+	/*margin: 12px 25px 12px 18px;*/
 	font-family: "Lucida Grande";
 	font-weight: normal;
 	font-size: 13px;
+	display: block;
+	width: 100%;
 	
 }
 
@@ -99,6 +105,7 @@ ul.nav li.sfHover ul#lrng-menu-list{
 	border: 1px solid gray;
 	background-color: white;
 	color: black;
+	/*padding: 12px 25px 12px 18px;*/
 }
 .menu-title-text-lrng{
 	padding: 8px 18px;
@@ -109,10 +116,10 @@ ul.nav li.sfHover ul#lrng-menu-list{
 	/*width: 248px;
 	height: 50px;*/
 	font-family: "Lucida Grande";
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 16px;
-	color: #000000;
-	margin: 14px 15px;
+	color: rgb(122, 106, 83);
+	margin: 14px 15px 14px 19px;
 }
 .cors-menu-item{
 	width: 98px;
