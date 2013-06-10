@@ -998,6 +998,69 @@
 			
 		}
 
+		function bookmarkCourse(ele){
+			var jq_ele = $(ele);
+			//console.log(JSON.stringify(jq_ele, null, 4));
+			//console.log(jq_ele.attr('id'));
+			//console.log(jq_ele.attr('src'));
+			var jq_ele_imgsrc = jq_ele.attr('src');
+			if(jq_ele_imgsrc == 'bookmark_unselect.png'){
+
+				$.get(	"../notes/get_notes.php"
+						,function(data, textStatus, jqXHR){
+							
+							console.log(JSON.stringify(data, null, 4));
+
+							var note_list = $(document.createElement('div'));
+							note_list.attr('id', 'lesson-note-list-anchor');
+							note_list.addClass('lesson-note-list');
+
+							<?php include_once '../notes/notes.php'; ?>
+							<?php $note = new Note(); ?>
+							var notes = data.notes;
+							var nCount = notes.length;
+							for(var i = 0;i < nCount;i = i + 1){
+
+								//<div class='lesson-note-block'>
+								//<div class='lesson-note-content'>note note note note note note note note </div>
+								//<div class='lesson-note-delete'>X</div>
+								//<div class='lesson-note-date'>2013-05-05</div>
+								//</div>
+
+								var content = $(document.createElement('div'));
+								content.html(notes[i].<?php echo $note->COL_CONTENT; ?>);
+								content.addClass('lesson-note-content');
+
+								var _delete = $(document.createElement('div'));
+								_delete.html('X');
+								_delete.addClass('lesson-note-delete');
+
+								var date = $(document.createElement('div'));
+								date.html(notes[i].<?php echo $note->COL_DATE; ?>); 
+								date.addClass('lesson-note-date');
+
+								var block = $(document.createElement('div'));
+								block.addClass('lesson-note-block');
+								content.appendTo(block);
+								_delete.appendTo(block);
+								date.appendTo(block);
+
+								block.appendTo(note_list);
+								
+							}
+
+							//anchor.height(note_list.height() + input_block.height() + 20);
+							note_list.appendTo(anchor);
+							
+						}
+						
+				);
+				
+			}else{
+				// user wish to unbk
+			}
+		}
+
 		$(document).ready(function() {
 
 			//buildMenu();
@@ -1097,7 +1160,11 @@
 					<div id='lpm-menu'>
 						
 						<ul class='nav'>
-							<li><a class='menu-title'><div class='menu-title-text'>NOTIFICATIONS</div></a>
+							<li><a class='menu-title'>
+									<div class='menu-title-text-noti'>
+										<div class=''>NOTIFICATIONS</div>
+									</div>
+								</a>
 								<ul id='noti-menu-list'>
 									<li class='noti-menu-item'>
 										<div class='noti-menu-item-img'><img src="../img/logo_62x62.png"></div>
@@ -1112,40 +1179,50 @@
 										<div class='noti-menu-item-cnt'>
 											<div class='noti-menu-item-cnt-name'>Belle Huang</div>
 											<div class='noti-menu-item-cnt-text'>Hi ~</div>
-											<div class='noti-menu-item-cnt-date'>last Wed.</div>
+											<div class='noti-menu-item-cnt-date'>2013/02/17</div>
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
-							<li><a class='menu-title'><div class='menu-title-text'>COURSES</div></a>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&bull;</div></li>
+							<li><a class='menu-title'>
+									<div class='menu-title-text-cors'>
+										<div class=''>COURSES</div>
+									</div>
+								</a>
 								<ul id='cors-menu-list'>
-									<li class='cors-menu-item-start'>
+									<!-- <li class='cors-menu-item-start'>
 										<div class='cors-menu-item-start-text'>Start browsing here.</div>
+									</li> -->
+									<li class='cors-menu-item'>
+										<div class='cors-menu-item-text'>Guitar</div>
+										<!-- <div class='cors-menu-item-img'><img src=""></div> -->
 									</li>
 									<li class='cors-menu-item'>
-										<div class='cors-menu-item-text'>GUITAR</div>
-										<div class='cors-menu-item-img'><img src=""></div>
+										<div class='cors-menu-item-text'>Piano</div>
+										<!-- <div class='cors-menu-item-img'><img src=""></div> -->
 									</li>
 									<li class='cors-menu-item'>
-										<div class='cors-menu-item-text'>PIANO</div>
-										<div class='cors-menu-item-img'><img src=""></div>
-									</li>
-									<li class='cors-menu-item'>
-										<div class='cors-menu-item-text'>THEORY</div>
-										<div class='cors-menu-item-img'><img src=""></div>
+										<div class='cors-menu-item-text'>Theory</div>
+										<!-- <div class='cors-menu-item-img'><img src=""></div> -->
 									</li>
 								</ul>
 							</li>
-							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
-							<li><a class='menu-title'><div class='menu-title-text'>YOUR LEARNING</div></a>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&bull;</div></li>
+							<li><a class='menu-title'>
+									<div class='menu-title-text-lrng'>YOUR LEARNING</div>
+								</a>
 								<ul id='lrng-menu-list'>
 									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My bookmarks</a></li>
 									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My notes</a></li>
 								</ul>
 							</li>
-							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
-							<li><a class='menu-title'><div class='menu-title-text'><div class='acnt-sayhello'>Hello, Arthur1980 </div>ACCOUNT</div></a>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&bull;</div></li>
+							<li><a class='menu-title'>
+									<div class='menu-title-text-acnt'>
+										<div class='acnt-sayhello'>Hello, Arthur1980 </div>ACCOUNT
+									</div>
+								</a>
 								<ul id='acnt-menu-list'>
 									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Profile</a></li>
 									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Messages</a></li>
@@ -1165,7 +1242,7 @@
 		
 		<div id='main-content'>
 			<div class='display-section'>
-			
+				
 				<div id='content-title'>
 					<div id='navi-block'>
 						<div class='navi-style'>
@@ -1212,7 +1289,7 @@
 					<div class='clear-float'></div>
 					
 					<div class='subject-course-label'>
-						<img src='bookmark_selected.png'>
+						<img src='bookmark_selected.png' id='course-id-1234' onclick='bookmarkCourse(this);'>
 					</div>
 					<div class='subject-course-content'>
 						<div class='course-name'>Course 1</div><div class='course-brief'>key signature and accidentals</div>

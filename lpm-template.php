@@ -1097,7 +1097,11 @@
 					<div id='lpm-menu'>
 						
 						<ul class='nav'>
-							<li><a class='menu-title'><div class='menu-title-text'>NOTIFICATIONS</div></a>
+							<li><a class='menu-title'>
+									<div class='menu-title-text-noti'>
+										<div class=''>NOTIFICATIONS</div>
+									</div>
+								</a>
 								<ul id='noti-menu-list'>
 									<li class='noti-menu-item'>
 										<div class='noti-menu-item-img'><img src="../img/logo_62x62.png"></div>
@@ -1112,40 +1116,50 @@
 										<div class='noti-menu-item-cnt'>
 											<div class='noti-menu-item-cnt-name'>Belle Huang</div>
 											<div class='noti-menu-item-cnt-text'>Hi ~</div>
-											<div class='noti-menu-item-cnt-date'>last Wed.</div>
+											<div class='noti-menu-item-cnt-date'>2013/02/17</div>
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
-							<li><a class='menu-title'><div class='menu-title-text'>COURSES</div></a>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&bull;</div></li>
+							<li><a class='menu-title'>
+									<div class='menu-title-text-cors'>
+										<div class=''>COURSES</div>
+									</div>
+								</a>
 								<ul id='cors-menu-list'>
-									<li class='cors-menu-item-start'>
+									<!-- <li class='cors-menu-item-start'>
 										<div class='cors-menu-item-start-text'>Start browsing here.</div>
+									</li> -->
+									<li class='cors-menu-item'>
+										<div class='cors-menu-item-text'>Guitar</div>
+										<!-- <div class='cors-menu-item-img'><img src=""></div> -->
 									</li>
 									<li class='cors-menu-item'>
-										<div class='cors-menu-item-text'>GUITAR</div>
-										<div class='cors-menu-item-img'><img src=""></div>
+										<div class='cors-menu-item-text'>Piano</div>
+										<!-- <div class='cors-menu-item-img'><img src=""></div> -->
 									</li>
 									<li class='cors-menu-item'>
-										<div class='cors-menu-item-text'>PIANO</div>
-										<div class='cors-menu-item-img'><img src=""></div>
-									</li>
-									<li class='cors-menu-item'>
-										<div class='cors-menu-item-text'>THEORY</div>
-										<div class='cors-menu-item-img'><img src=""></div>
+										<div class='cors-menu-item-text'>Theory</div>
+										<!-- <div class='cors-menu-item-img'><img src=""></div> -->
 									</li>
 								</ul>
 							</li>
-							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
-							<li><a class='menu-title'><div class='menu-title-text'>YOUR LEARNING</div></a>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&bull;</div></li>
+							<li><a class='menu-title'>
+									<div class='menu-title-text-lrng'>YOUR LEARNING</div>
+								</a>
 								<ul id='lrng-menu-list'>
 									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My bookmarks</a></li>
 									<li class='lrng-menu-item'><a class='lrng-menu-item-text' href="#">My notes</a></li>
 								</ul>
 							</li>
-							<li class='menu-dot-item'><div class='menu-dot-item-text'>&emsp;&bull;&emsp;</div></li>
-							<li><a class='menu-title'><div class='menu-title-text'><div class='acnt-sayhello'>Hello, Arthur1980 </div>ACCOUNT</div></a>
+							<li class='menu-dot-item'><div class='menu-dot-item-text'>&bull;</div></li>
+							<li><a class='menu-title'>
+									<div class='menu-title-text-acnt'>
+										<div class='acnt-sayhello'>Hello, Arthur1980 </div>ACCOUNT
+									</div>
+								</a>
 								<ul id='acnt-menu-list'>
 									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Profile</a></li>
 									<li class='acnt-menu-item'><a class='acnt-menu-item-text' href="#">Messages</a></li>
