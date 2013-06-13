@@ -156,9 +156,9 @@
 
 		//console.log(islogin);
 		if(islogin){
-			<?php session_start(); ?>
-			var account_title = 'Hi, ' + '<?php echo $_SESSION['mem_name']; ?>';
-			menu[3] = [account_title, 'Profile', 'Log out'];
+			<?php //session_start(); ?>
+			//var account_title = 'Hi, ' + '<?php //echo $_SESSION['mem_name']; ?>';
+			//menu[3] = [account_title, 'Profile', 'Log out'];
 		}
 
 		//console.log(document.cookie);
@@ -1228,7 +1228,7 @@
 									<div class='menu-title-text-lrng'>YOUR LEARNING</div>
 								</a>
 								<ul id='lrng-menu-list'>
-									<li class='lrng-menu-item' id='lrng-menu-item-bk'><a class='lrng-menu-item-text' href="#">Your bookmarks</a></li>
+									<li class='lrng-menu-item' id='lrng-menu-item-bk'><a class='lrng-menu-item-text' href="../bookmark">Your bookmarks</a></li>
 									<li class='lrng-menu-item' id='lrng-menu-item-nt'><a class='lrng-menu-item-text' href="#">Your notes</a></li>
 								</ul>
 							</li>

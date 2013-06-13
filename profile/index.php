@@ -51,5 +51,7 @@
 				</div>
 			
 	";
+	
+	include_once '../lpm-template.php';
 
 ?>
