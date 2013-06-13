@@ -49,6 +49,13 @@
 }
 
 /* content */
+.subject-course-link-style{
+	text-decoration: none;
+	color: #039;
+}
+.subject-course-link-style:hover{
+	color: #06c;
+}
 .subject-course-content{
 	float: left;
 }

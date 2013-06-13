@@ -30,6 +30,14 @@
 	
 }
 
+/* lesson block */
+.course-lesson-link-style{
+	text-decoration: none;
+	color: #039;
+}
+.course-lesson-link-style:hover{
+	color: #06c;
+}
 .course-lesson-video{
 	float: left;
 	margin: 0px 27px 48px 0px;

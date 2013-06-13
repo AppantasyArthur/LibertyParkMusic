@@ -1261,7 +1261,18 @@
 		<div id='main-content'>
 			<div class='display-section'>
 			
-				<?php echo $content; ?>
+				<div id='content-title'>
+					<div id='bk-navi-block'>
+						<div class='bk-navi-style-style'>Piano</div><div class='bk-navi-style-nonselect'>&nbsp;|&nbsp;GUITAR&nbsp;|&nbsp;THEORY</div>
+					</div>
+					<div id='main-title-block'>
+						<div class='subject-level-beginner-block'>
+							<div class='subject-level-beginner-block-text'>BEGINNER</div>
+							<img class='subject-level-beginner-block-img' src='../img/crotchet_print_wh_1.png'>
+						</div>
+						<div class='main-title-style'>Piano</div>
+					</div>
+				</div>
 				
 			</div><!-- display-section -->
 		</div><!-- main-content -->

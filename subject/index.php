@@ -22,7 +22,7 @@
 						<img src='bookmark_unselect.png' id='course-id-1234' onclick='bookmarkCourse(this);'>
 					</div>
 					<div class='subject-course-content'>
-						<div class='course-name'>Course 1</div><div class='course-brief'>key signature and accidentals</div>
+						<a href='../course/?courseid=1234' class='subject-course-link-style'><div class='course-name'>Course 1</div></a><div class='course-brief'>key signature and accidentals</div>
 						<div class='course-teacher-name'>Hung-Chang Wei</div>
 						<div class='course-uploadtime'>2013.03.03</div><div class='course-isupdate'>updated!</div>
 						<div class='course-topic'><span class='course-bold'>Topics</span>: Roman numeral analysis, triads, seventh chords</div>
@@ -50,7 +50,7 @@
 						<img src='bookmark_selected.png' id='course-id-1234' onclick='bookmarkCourse(this);'>
 					</div>
 					<div class='subject-course-content'>
-						<div class='course-name'>Course 1</div><div class='course-brief'>key signature and accidentals</div>
+						<a href='../course/?courseid=4567' class='subject-course-link-style'><div class='course-name'>Course 1</div></a><div class='course-brief'>key signature and accidentals</div>
 						<div class='course-teacher-name'>Hung-Chang Wei</div>
 						<div class='course-uploadtime'>2013.03.03</div><div class='course-isupdate'>updated!</div>
 						<div class='course-topic'><span class='course-bold'>Topics</span>: Roman numeral analysis, triads, seventh chords</div>

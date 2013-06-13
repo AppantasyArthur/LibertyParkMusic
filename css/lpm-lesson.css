@@ -1,3 +1,214 @@
+/* lesson right block */
+/** recommended */
+.lesson-recommended-block-title{
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 20px;
+	color: black;
+	margin-bottom: 18px;
+}
+.lesson-recommended-block{
+	margin-top: 48px;
+}
+
+/** teacher */
+.lesson-teacher-position, .lesson-teacher-description{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 12px;
+	color: black;
+}
+.lesson-teacher-name{
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 20px;
+	color: black;
+}
+.lesson-teacher-img{
+	width: 90px;
+	height: 90px;
+	float: left;
+	margin-right: 30px;
+	background-color: #333;
+}
+.lesson-teacher-block{
+	clear: both;
+	margin-top: 68px;	
+}
+
+/** video list */
+.lesson-sub-video-teacher, .lesson-sub-video-date{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 12px;
+	color: black;
+}
+.lesson-sub-video-name{
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 17px;
+	color: black;
+}
+.lesson-sub-video{
+	margin-right: 18px;
+	float: left;
+}
+.lesson-sub-video-block{
+	margin-top: 15px;
+	height: 67px;
+}
+.lesson-video-list{
+	/*width: 100%;*/
+	margin-top: 30px;
+}
+
+/** global */
+.lesson-right-block{
+	width: 317px;
+	float: right;
+	/* border: 1px solid #1C3F77; */
+}
+
+/* lesson left block */
+/** comments */
+.lesson-comment-date{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 10px;
+	color: #727171;
+}
+.lesson-comment-content{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 13px;
+	color: black;
+}
+.lesson-comment-input-user-img, .lesson-comment-user-img{
+	width: 65px;
+	height: 65px;
+	background: #A9C6CE;
+	float: left;
+}
+.lesson-comment{
+	clear: both;
+	width: 100%;
+	height: 65px;
+	margin-top: 18px;
+}
+#lesson-comment-list-anchor{
+	width: 100%;
+	margin-top: 101px;
+}
+.lesson-comment-input-text{
+	/* width: 100%;
+	height: 65px;
+	border: 1px solid #1C3F77; */
+}
+.lesson-comment-input-text-area{
+	float: left;
+}
+.lesson-comment-input-text-send{
+	width: 50px;
+	height: 50px;
+	float: right;
+	background: #99CCFF;
+	margin-top: 4px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.lesson-comment-input-text-send:hover{
+	background: #6B8FB2;
+}
+ 
+.lesson-comment-input{
+	width: 100%;
+	margin-top: 18px;
+}
+.lesson-comment-block-title{
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 20px;
+	color: black;
+}
+.lesson-comment-block{
+	width: 100%;
+	margin-top: 30px;
+}
+
+/** homeworks*/
+.lesson-file-item{
+	margin: 20px;
+}
+.lesson-file-tabs{
+	/*height: 30px;*/
+}
+.lesson-file-tab{
+	width: 100px;
+	height: 30px;
+	float: left;
+	background-color: #333333;
+	cursor: pointer;
+}
+.lesson-file-tab-selected{
+	background-color: #386070;
+}
+.lesson-file-tab:hover{
+	background-color: #386070;
+}
+.lesson-file-tab-text{
+	margin: 9px 18px;
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 12px;
+	color: white;
+}
+.lesson-file-tab-content{
+	clear: both;
+	width: 620px;
+	height: 130px;
+	background-color: #A9C6CE;
+}
+.lesson-file-block{
+	width: 100%;
+	margin-top: 30px;
+}
+/** description*/
+.lesson-description{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 13px;
+	color: black;
+}
+.lesson-teacher, .lesson-update-date{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 12px;
+	color: black;
+}
+.lesson-title{
+	font-family: "Lucida Sans";
+	font-weight: 600;
+	font-size: 22px;
+	color: black;
+}
+.lesson-description-block{
+	width: 100%;
+	margin-top: 15px;
+}
+/** global */
+.lesson-left-block{
+	width: 636px;
+	float: left;
+}
+
+/* lesson layout */
+.lesson-content-range{
+	width: 100%;
+	margin-top: 18px;
+	margin-left: 20px;
+}
+
+/* 20130613 before */
 /* lesson-note-xxx */
 .lesson-note-input-block{
 	width: 100%;
@@ -25,24 +236,36 @@
 }
 
 .lesson-note-list{
+	padding: 20px;
 	width: 100%;
 	clear: both;
 }
 
 .lesson-note-block{
-	width: 98%;
-	height: 88px;
+	/*width: 98%;
+	height: 88px;*/
 	clear: both;
-	border: 1px dotted #ffffff;
+	/*border: 1px dotted #ffffff;*/
+	margin: 40px 3px;
 }
 
 .lesson-note-content{
-	width: 90%;
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 16px;
+	color: black;
+	
+	/*width: 90%;
 	height: 68px;
-	float: left;
+	float: left;*/
 }
 
 .lesson-note-date{
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 13px;
+	color: gray;
+	
 	width: 90%;
 	height: 20px;
 	float: left;
@@ -67,21 +290,6 @@
 	margin: 10px;
 }
 
-.lesson-file-tab{
-	width: 100px;
-	margin: 5px;
-	background: #99CCFF;
-	color: black;
-}
-
-.lesson-file-tab:hover{
-	background: #6B8FB2;
-	color: white;
-}
-
-#lesson-comment-input-textarea{
-	
-}
 
 .study-doc{
 	
@@ -96,9 +304,10 @@ object{
 }
 
 .full-screen-mode{
+	padding: 40px;
 	display: none;
 	z-index: 1000;
-	background-color: black;
+	background-color: #fff;
 	/*opacity: 0.95;*/
 	width: 100%;
 	color: white;
@@ -108,152 +317,22 @@ object{
 .study-mode-left{
 	width: 45%;
 	float: left;
+	background-color: white;
 }
 
 .study-mode-right{
 	width: 55%;
 	float: right;
+	background-color: #A9C6CE;
 }
 
 #study_mode_hook-bg{
 	z-index: 999;
 }
 
-.lesson-level-block, .lesson-block{
+.lesson-level-block{
 	width: 100%;
 	height: 1000px;
 }
 
-.lesson-left-block{
-	width: 65%;
-	float: left;
-	/* border: 1px solid #1C3F77; */
-}
-
-.lesson-right-block{
-	width: 33%;
-	float: right;
-	/* border: 1px solid #1C3F77; */
-}
-
-/* .lesson-main-video{
-	float: left;
-	border: 1px solid #1C3F77;
-}
-
-.lesson-video-list{
-	float: right;
-}
-
-.lesson-description-block{
-	clear: both;
-}
-*/
-
-.lesson-sub-video-block{
-	/* border: 1px solid #1C3F77; */
-	width: 100%;
-	height: 70px;
-}
-
-.lesson-sub-video{
-	float: left;
-}
-
-/*
-.lesson-description-block{
-	float: left;
-	width: 650px;
-	border: 1px solid #1C3F77;
-}
-
-.lesson-teacher-block{
-	clear: both;
-}
-.lesson-file-block{
-	clear: both;
-}
- */
  
- .lesson-file-tabs{
- 	height: 30px;
- }
- 
- .lesson-file-tab{
- 	float: left;
- }
- 
- .lesson-file-tab-content{
- 	clear: both;
- 	width: 95%;
- 	height: 100px;
- 	border: 1px solid #1C3F77;
- }
- 
- .lesson-comment-block{
- 	width: 95%;
- }
- 
- .lesson-comment-input-user-img, .lesson-comment-user-img{
- 	width: 65px;
- 	height: 65px;
- 	background: #A9C6CE;
- 	float: left;
- }
- 
- .lesson-comment-input, .lesson-comment{
- 	width: 100%;
- 	height: 70px;
- 	/* border: 1px solid #1C3F77; */
- 	clear: both;
- }
- 
-
- .lesson-comment-input-text{
- 	/* width: 100%;
- 	height: 65px;
- 	border: 1px solid #1C3F77; */
- }
- 
- .lesson-comment-input-text-send{
- 	width: 50px;
- 	height: 50px;
- 	border: 1px solid #1C3F77;
- 	float: right;
- 	background: #99CCFF;
- 	margin: 4px;
- }
- 
- .lesson-comment-input-text-send:hover{
- 	background: #6B8FB2;
- }
- 
- .lesson-title{
- 	font: bold 22px Georgia, serif;
- }
- 
- .lesson-sub-video-name{
- 	font: bold 17px Georgia, serif;
- }
- 
- .lesson-teacher, .lesson-update-date, .lesson-sub-video-teacher, .lesson-sub-video-date{
- 	font: 10px Lucida Sans Unicode, Lucida Grande, sans-serif;
- }
- 
- .lesson-description{
- 	font: 13px Lucida Sans Unicode, Lucida Grande, sans-serif;
- }
- 
- .lesson-teacher-img{
- 	width: 100px;
- 	height: 100px;
- 	float: left;
- }
- 
- .lesson-teacher-name{
- 	font: 20px Lucida Sans Unicode, Lucida Grande, sans-serif;
- }
- 
- .lesson-teacher-description{
- 	font: 12px Lucida Sans Unicode, Lucida Grande, sans-serif;
- }

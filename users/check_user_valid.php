@@ -3,6 +3,7 @@
 	
 
 	include_once '../php_global/dbsetting.php';
+	include_once '../php_global/sessions.php';
 	
 	include_once 'users_col.php';
 	
@@ -15,28 +16,41 @@
 	$result = $mysqli->query($sql);
 	
 	if($mysqli->affected_rows == 0){
-		 $response["msg"] = "login failed";
-		 $response["valid"] = false;
+		
+		$response["msg"] = "login failed";
+		$response["valid"] = false;
+		
 	}else{
+		
 		$response["msg"] = "login success";
 		$response["valid"] = true;
 		
+		$row = $result->fetch_array(MYSQLI_ASSOC);
+		$mem_name = $row[$first_col]." ".$row[$last_col];
+		
+		$lpmsession = new LPMSession();
+		$lpmsession->setMemberName($mem_name);
+		$lpmsession->setMemberUsername($email);
+		$lpmsession->setMemberPassword($pwd);
+		
+		
 		$rememberMe = $_REQUEST['memme'];
 		if($rememberMe){ // set cookie
+			
 			//$domain = "lpm.appantasy.com";
-			$domain = "localhost:8888";
+			//$domain = "localhost:8888";
 			
 			//setcookie('username', $email, time() + 60*60*24*365, '/', $domain);
 			//setcookie('password', $pwd, time() + 60*60*24*365, '/', $domain);
-			session_start();
-			$_SESSION['username'] = $email;
-			$_SESSION['password'] = $pwd;
+			//session_start();
+			//$_SESSION['username'] = $email;
+			//$_SESSION['password'] = $pwd;
 			
-			$row = $result->fetch_array(MYSQLI_ASSOC);
-			$_SESSION['mem_name'] = $row[$first_col]." ".$row[$last_col];
+			//$row = $result->fetch_array(MYSQLI_ASSOC);
+			//$_SESSION['mem_name'] = $row[$first_col]." ".$row[$last_col];
 			
-			$response['username'] = $_SESSION['username'];
-			$response['password'] = $_SESSION['password'];
+			//$response['username'] = $_SESSION['username'];
+			//$response['password'] = $_SESSION['password'];
 			
 		}
 	
