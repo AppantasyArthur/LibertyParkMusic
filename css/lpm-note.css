@@ -1,40 +1,37 @@
 /* content */
 /** block list */
-.bk-block-list-item-coursename{
+.nt-block-list-item-note{
+	margin-top: 18px;
+	
+	font-family: "Lucida Sans";
+	font-weight: normal;
+	font-size: 14px;
+	color: black;
+}
+.nt-block-list-item-courselessonname{
 	
 	font-family: "Lucida Sans";
 	font-weight: 600;
 	font-size: 22px;
 	color: black;
 }
-.bk-block-list-item-delete{
-	width: 18px;
-	height: 18px;
-	float: left; 
-	margin-right: 20px;
-	clear: both;
-	visibility: hidden;
-}
-.bk-block-list-item{
+.nt-block-list-item{
 	width: 100%;
 	margin-top: 18px;
 	clear: both;
 }
-.bk-block-list-item:hover > .bk-block-list-item-delete{
-	visibility: visible;
-}
-.bk-block-list{
+.nt-block-list{
 	width: 100%;
-	margin-left: -18px;
+	margin-left: 20px;
 	margin-top: 18px;
 	clear: both;
 }
 
 /** block title */
-.bk-block-title-img{
+.nt-block-title-img{
 	padding: 3px 0;
 }
-.bk-block-title-text{
+.nt-block-title-text{
 	margin: 6px 20px;
 	float: left;
 	font-family: "Lucida Sans";
@@ -42,20 +39,26 @@
 	font-size: 20px;
 	color: white;
 }
-.bk-block-title{
+.nt-block-title{
 	width: 285px;
 	height: 32px;
-	background-color: #b9dc2f;
-	/*position: absolute;*/
-	/*bottom: 0;*/
 }
-.bk-block{
+.nt-block-title-bgin{
+	background-color: #b9dc2f;
+}
+.nt-block-title-intr{
+	background-color: #7FBD25;
+}
+.nt-block-title-advc{
+	background-color: #2D613D;
+}
+.nt-block{
 	margin-top: 47px;
 	width: 100%;
 }
-.bk-list{
-	margin-top: 23px;
-	width: 500px;
+.nt-list{
+	margin-top: -29px;
+	width: 814px;
 	/*height: 800px;*/
 	clear: both;
 	float: left;
@@ -63,7 +66,17 @@
 
 /* head */
 /** title*/
-.bk-main-title-block-text{
+.nt-main-title-block-function-item{
+	float: left;
+	margin: 6px;
+}
+.nt-main-title-block-function{
+	position: absolute;
+	top: 74px;
+	right: 0;
+	/*bottom: 5px;*/
+}
+.nt-main-title-block-text{
 	font-family: "Lucida Sans";
 	font-size: 66px;
 	color: #333333;
@@ -71,14 +84,7 @@
 	right: 0;
 	/*bottom: 5px;*/
 }
-.bk-main-title-block-img{
-	width: 85px;
-	float: left;
-	position: absolute;
-	right: 387px;
-	margin-top: -23px;
-}
-#bk-main-title-block{
+#nt-main-title-block{
 	margin-top: 3px;
 	width: 500px;
 	float: right;
@@ -86,17 +92,17 @@
 }
 
 /** navi */
-.bk-navi-style-link{
+.nt-navi-style-link{
 	text-decoration: none;
 	color: #969696;
 }
-.bk-navi-style-nonselect{
+.nt-navi-style-nonselect{
 	font-family: "Lucida Sans";
 	font-weight: normal;
 	font-size: 14px;
 	color: #969696;
 }
-.bk-navi-style-select{
+.nt-navi-style-select{
 	font-family: "Lucida Sans";
 	font-weight: normal;
 	font-size: 14px;
@@ -104,7 +110,9 @@
 	
 	float: left;
 }
-#bk-navi-block{
+#nt-navi-block{
+	position: relative;
+	z-index: 100;
 	margin-top: 3px;
 	width: 500px;
 	float: left;	

@@ -1,0 +1,29 @@
+.piano-beginner-bgcolor{
+	background-color: #b9dc2f;
+}
+.piano-intermediate-bgcolor{
+	background-color: #7FBD25;
+}
+.piano-advanced-bgcolor{
+	background-color: #2D613D;
+}
+
+.guitar-beginner-bgcolor{
+	background-color: #B9DC2F;
+}
+.guitar-intermediate-bgcolor{
+	background-color: #7FBD25;
+}
+.guitar-advanced-bgcolor{
+	background-color: #2D613D;
+}
+
+.theory-beginner-bgcolor{
+	background-color: #E85656;
+}
+.theory-intermediate-bgcolor{
+	background-color: #E7412B;
+}
+.theory-advanced-bgcolor{
+	background-color: #9E0A0A;
+}

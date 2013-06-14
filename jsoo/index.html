@@ -2,26 +2,44 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript">
 
-	var Person = function(){};
 	
-	function testMe(){
-		
-		//var p = new Person({
-		//	name: "Arthur"
-		//});
-		
-		console.log(p.getName());
-		console.log(p.name);
-		
-	}
+	<script type="text/javascript" src='oo.js'></script>
 	
-	
-</script>
+	<script type="text/javascript">
+		
+		var pA = new Person({
+			name: 'Arthur',
+			age: 18
+		});
+		
+		var pB = new Person({
+			name: 'Belle',
+			age: 38
+		});
+		
+		function init(){
+			
+			/*console.log('1 : ' + pA.height); 
+			console.log(pA.getHeight()); 
+			console.log('1 : ' + pB.height); 
+			console.log(pB.getHeight());
+			console.log('1 : ' + pA.height); 
+			console.log(pA.getHeight());*/
+			
+			pA.getName();
+			pB.getName();
+			pA.getName();
+			
+			Output.printout(pA.getHeight());
+			
+		}
+		
+	</script>
+	<script type="text/javascript" src='oo_base.js'></script>
 <title>Insert title here</title>
 </head>
-<body>
-	<input type='button' onclick='testMe();' value='click to test'>
+<body onload="init();">
+	<input type='button' onclick='Person.getName();Person.getAge();' value='click to test'>
 </body>
 </html>
