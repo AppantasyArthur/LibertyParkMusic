@@ -5,7 +5,7 @@
 	<meta charset='utf-8'>
 	<title><?php echo $title; ?></title>
 	
-	<link rel="stylesheet" href="../css/lpm-global.css">
+	
 	
 	<link rel="stylesheet" href="../css/lpm-reset.css">
 	<!--  <link rel='stylesheet' href='../css/lpm-base.css'> -->
@@ -25,6 +25,8 @@
 	
 	<link rel='stylesheet' href='../css/lpm-bookmark.css'> 
 	<link rel='stylesheet' href='../css/lpm-note.css'> 
+	
+	<link rel="stylesheet" href="../css/lpm-global.css">
 	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
