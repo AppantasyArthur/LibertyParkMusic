@@ -64,7 +64,7 @@
 											<!-- <div class='cors-menu-item-img'><img src=""></div> -->
 										</a>
 									</li>
-									<li class='cors-menu-item'>
+									<li class='cors-menu-item cors-menu-item-last'>
 										<a class='hyper-link-menu-item' href='../subject/?subject=guitar'>
 											<div class='cors-menu-item-text'>Theory</div>
 											<!-- <div class='cors-menu-item-img'><img src=""></div> -->
@@ -84,12 +84,18 @@
 							<li class='menu-dot-item'><div class='menu-dot-item-text'>&bull;</div></li>
 							<li><a class='menu-title'>
 									<div class='menu-title-text-acnt'>
+										<?php 
+											include_once '../php_global/sessions.php';
+											$lpmsession = new LPMSession();
+										?>
 										<div class='acnt-sayhello'><?php if($lpmsession->isLogin()) echo $lpmsession->getMemberName(); ?>&nbsp;&nbsp;&nbsp;</div>
 										ACCOUNT
 									</div>
 								</a>
 								<ul id='acnt-menu-list'>
-									<li class='acnt-menu-item' id='acnt-menu-item-profile'><a class='acnt-menu-item-text' href="#">Profile</a></li>
+									<li class='acnt-menu-item' id='acnt-menu-item-profile'>
+										<a class='acnt-menu-item-text' href="#">Profile</a>
+									</li>
 									<li class='acnt-menu-item' id='acnt-menu-item-message'><a class='acnt-menu-item-text' href="#">Messages</a></li>
 									<li class='acnt-menu-item' id='acnt-menu-item-contact'><a class='acnt-menu-item-text' href="#">Contacts</a></li>
 									<li class='acnt-menu-item' id='acnt-menu-item-signin'><a class='acnt-menu-item-text' href="../signin">Sign in</a></li>

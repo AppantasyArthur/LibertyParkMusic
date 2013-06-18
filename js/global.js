@@ -1,25 +1,12 @@
 var lpm = {}; // namespace
-lpm.Global = function(){
+lpm.Global = function(pars){
 	
-	this.isLogin = false;
-	
-};
-
-lpm.Global.initMenu = function(){
-	
-	$('ul.nav').superfish({
-		//delay: 200,
-		animation: {opacity: 'show'},
-		speed: 'fast',
-		speedOut: 'fast',
-		autoArrows: false,
-		dropShadows: false
-	});
+	this.isLogin = pars.isLogin;
 	
 };
 
-// show hide function
-lpm.Global.checkLogin = function(){
+//show hide function
+lpm.Global.prototype.checkLogin = function(){
 	
 	if(!this.isLogin){
 
@@ -41,3 +28,20 @@ lpm.Global.checkLogin = function(){
 	}
 	
 };
+
+lpm.Global.prototype.initMenu = function(){
+	
+	$('ul.nav').superfish({
+		//delay: 200,
+		animation: {opacity: 'show'},
+		speed: 'fast',
+		speedOut: 'fast',
+		autoArrows: false,
+		dropShadows: false
+	});
+	
+	this.checkLogin();
+	
+};
+
+

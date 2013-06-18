@@ -1,24 +1,10 @@
-var Signin = function(){};
+lpm.Signin = function(){};
 
-Signin.prototype.signinLPMwithFB = function(){
+lpm.Signin.prototype.signinLPMwithFB = function(){
 	alert('You click me !');
 };
 
-// PHP code, move to each page!
-var islogin = <?php 
-
-	// echo $islogin; 
-	include_once '../php_global/sessions.php';
-	$lpmsession = new LPMSession();
-	if($lpmsession->isLogin()){
-		echo "true";
-	}else{
-		echo "false";
-	}
-
-?>;
-
-Signin.prototype.signinLPM = function(){
+lpm.Signin.prototype.signinLPM = function(){
 
 	var username = $('#signin-lpm-username').val();
 	var password = $('#signin-lpm-password').val();

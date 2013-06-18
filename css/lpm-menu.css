@@ -1,3 +1,17 @@
+/* About shortcut */
+.about-menu-style{
+	text-decoration: none;
+}
+.about-menu-style:link{
+	color: black;
+}
+.about-menu-style:hover{
+	color: gray;
+}
+.about-menu-style:visited{
+	color: black;
+}
+
 /* subscribe news */
 .sub-ok{
 	width: 60px;
@@ -113,19 +127,23 @@ ul.nav li.sfHover ul#lrng-menu-list{
 
 /* cors menu */
 .cors-menu-item-text{
-	/*width: 248px;
-	height: 50px;*/
+	/*width: 100px;
+	height: 44px;*/
 	font-family: "Lucida Grande";
 	font-weight: normal;
 	font-size: 16px;
 	color: rgb(122, 106, 83);
-	margin: 14px 15px 14px 19px;
+	padding: 15px 27px 14px 19px;
+	/*margin: 14px 15px 14px 19px;*/
 }
 .cors-menu-item{
-	width: 98px;
-	height: 43px;	
-	border: 1px solid gray;
+	width: 100px;
+	height: 44px;	
+	border-bottom: 1px solid gray;
 	background-color: white;
+}
+.cors-menu-item-last{
+	border-bottom: 0px;
 }
 .cors-menu-item-start-text{
 	margin: 15px 30px;
@@ -142,10 +160,10 @@ ul.nav li.sfHover ul#lrng-menu-list{
 }
 ul.nav li:hover ul#cors-menu-list,
 ul.nav li.sfHover ul#cors-menu-list{
-	margin-left: -1px;
+	margin-left: 0px;
 }
 .menu-title-text-cors{
-	padding: 8px 20px 8px 20px;
+	padding: 8px 21px 8px 20px;
 	/*width: 100px;
 	height: 45px;*/
 	/*padding-left: 30px;*/
@@ -216,6 +234,7 @@ ul.nav li.sfHover ul#noti-menu-list{
 .menu-dot-item-text{
 	font-weight: 400;
 	padding: 10px 0px;
+	margin: 0px;
 }
 .menu-title-text{
 	/*padding: 10px 10px;*/
@@ -273,6 +292,10 @@ ul.nav ul{
 	/*font-size: 85.7%;*/
 	/*width: 8em;*/
 	/*line-height: 1.8;*/ /* ? */
+}
+
+ul.nav > li{
+	margin: 0px;
 }
 
 /* 子選單選項文字 */

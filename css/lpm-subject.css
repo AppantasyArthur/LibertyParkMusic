@@ -91,16 +91,3 @@
 	color: white;
 }
 
-/* global */
-.about-menu-style{
-	text-decoration: none;
-}
-.about-menu-style:link{
-	color: black;
-}
-.about-menu-style:hover{
-	color: gray;
-}
-.about-menu-style:visited{
-	color: black;
-}

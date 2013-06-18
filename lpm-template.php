@@ -21,6 +21,9 @@
 	
 	<link rel='stylesheet' href='../css/lpm-subject.css'>
 	
+	<link rel='stylesheet' href='../css/lpm-bookmark.css'> 
+	<link rel='stylesheet' href='../css/lpm-note.css'> 
+	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 	<script src="../superfish/superfish.js"></script>

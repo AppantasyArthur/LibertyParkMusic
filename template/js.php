@@ -1,3 +1,5 @@
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+	<script src="../js/jquery/jquery-1.10.1.min.js"></script>
+	<script src="../js/jquery/jquery-migrate-1.2.1.min.js"></script>
 	<script src="../superfish/superfish.js"></script>
+	<script src="../js/global.js"></script>
+	<script src="../js/signin.js"></script>
