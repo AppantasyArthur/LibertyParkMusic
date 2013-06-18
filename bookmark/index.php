@@ -28,7 +28,7 @@
 						</div>
 					</div>
 					<div class='bk-block'>
-						<div class='bk-block-title'>
+						<div class='bk-block-title piano-intermediate-bgcolor'>
 							<div class='bk-block-title-text'>INTERMEDIATE</div>
 							<div class='bk-block-title-img'><img src='../img/crotchet_wh_2.png'></div>
 						</div>
