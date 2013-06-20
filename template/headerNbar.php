@@ -24,6 +24,7 @@
 									</div>
 								</a>
 								<ul id='noti-menu-list'>
+									<!-- <li class='noti-menu-item' id='noti-menu-item-login'><a class='noti-menu-item-text' href="#">Login first</a></li> -->
 									<!-- <li class='noti-menu-item'>
 										<div class='noti-menu-item-img'><img src="../img/logo_62x62.png"></div>
 										<div class='noti-menu-item-cnt'>
@@ -78,7 +79,8 @@
 								</a>
 								<ul id='lrng-menu-list'>
 									<li class='lrng-menu-item' id='lrng-menu-item-bk'><a class='lrng-menu-item-text' href="../bookmark">Your bookmarks</a></li>
-									<li class='lrng-menu-item' id='lrng-menu-item-nt'><a class='lrng-menu-item-text' href="#">Your notes</a></li>
+									<li class='lrng-menu-item lrng-menu-item-last' id='lrng-menu-item-nt'><a class='lrng-menu-item-text' href="#">Your notes</a></li>
+									<!-- <li class='lrng-menu-item' id='lrng-menu-item-login'><a class='lrng-menu-item-text' href="#">Login first</a></li> -->
 								</ul>
 							</li>
 							<li class='menu-dot-item'><div class='menu-dot-item-text'>&bull;</div></li>
@@ -97,9 +99,9 @@
 										<a class='acnt-menu-item-text' href="#">Profile</a>
 									</li>
 									<li class='acnt-menu-item' id='acnt-menu-item-message'><a class='acnt-menu-item-text' href="#">Messages</a></li>
-									<li class='acnt-menu-item' id='acnt-menu-item-contact'><a class='acnt-menu-item-text' href="#">Contacts</a></li>
+									<li class='acnt-menu-item acnt-menu-item-last' id='acnt-menu-item-contact'><a class='acnt-menu-item-text' href="#">Contacts</a></li>
 									<li class='acnt-menu-item' id='acnt-menu-item-signin'><a class='acnt-menu-item-text' href="../signin">Sign in</a></li>
-									<li class='acnt-menu-item' id='acnt-menu-item-signup'><a class='acnt-menu-item-text' href="../signup">Sign up</a></li>
+									<li class='acnt-menu-item acnt-menu-item-last' id='acnt-menu-item-signup'><a class='acnt-menu-item-text' href="../signup">Sign up</a></li>
 								</ul>
 							</li>
 						</ul>

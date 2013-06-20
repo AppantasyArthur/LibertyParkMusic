@@ -55,7 +55,11 @@
 /* acnt menu */
 .acnt-menu-item-text{
 	display: block;
-	margin: 14px 28px;	
+	padding: 12px 28px;	
+	
+	font-family: "Lucida Grande";
+	font-weight: normal;
+	font-size: 13px;
 }
 
 .acnt-sayhello{
@@ -82,13 +86,16 @@
 .acnt-menu-item{
 	width: 168px;
 	height: 38px;
-	border: 1px solid gray;
+	border-bottom: 1px solid gray;
 	background-color: white;
 }
 
 ul.nav li:hover ul#acnt-menu-list,
 ul.nav li.sfHover ul#acnt-menu-list{
 	margin-left: 0px;
+	-moz-box-shadow:    4px 4px 8px 0px #ccc;
+  	-webkit-box-shadow: 4px 4px 8px 0px #ccc;
+  	box-shadow:         4px 4px 8px 0px #ccc;
 }
 .menu-title-text-acnt{
 	padding: 8px 16px;
@@ -97,26 +104,30 @@ ul.nav li.sfHover ul#acnt-menu-list{
 /* lrng menu */
 ul.nav li:hover ul#lrng-menu-list,
 ul.nav li.sfHover ul#lrng-menu-list{
-	margin-left: -1px;
+	margin-left: 0px;
+	-moz-box-shadow:    4px 4px 8px 0px #ccc;
+  	-webkit-box-shadow: 4px 4px 8px 0px #ccc;
+  	box-shadow:         4px 4px 8px 0px #ccc;
 }
+
 
 .lrng-menu-item-text{
 	display: block;
-	margin-left: 18px;
-	margin-top: 12px;
-	/*margin: 12px 25px 12px 18px;*/
+	/*margin-left: 18px;
+	margin-top: 12px;*/
+	padding: 12px 18px 13px 19px;
 	font-family: "Lucida Grande";
 	font-weight: normal;
 	font-size: 13px;
 	display: block;
-	width: 100%;
-	
+	/*width: 100%;*/
+	/*height: 38px;*/
 }
 
 .lrng-menu-item{
-	width: 143px;
+	width: 144px;
 	height: 38px;
-	border: 1px solid gray;
+	border-bottom: 1px solid gray;
 	background-color: white;
 	color: black;
 	/*padding: 12px 25px 12px 18px;*/
@@ -142,7 +153,7 @@ ul.nav li.sfHover ul#lrng-menu-list{
 	border-bottom: 1px solid gray;
 	background-color: white;
 }
-.cors-menu-item-last{
+.cors-menu-item-last, .lrng-menu-item-last, .acnt-menu-item-last{
 	border-bottom: 0px;
 }
 .cors-menu-item-start-text{
@@ -161,6 +172,9 @@ ul.nav li.sfHover ul#lrng-menu-list{
 ul.nav li:hover ul#cors-menu-list,
 ul.nav li.sfHover ul#cors-menu-list{
 	margin-left: 0px;
+	-moz-box-shadow:    4px 4px 8px 0px #ccc;
+  	-webkit-box-shadow: 4px 4px 8px 0px #ccc;
+  	box-shadow:         4px 4px 8px 0px #ccc;
 }
 .menu-title-text-cors{
 	padding: 8px 21px 8px 20px;
@@ -215,6 +229,9 @@ ul.nav li.sfHover ul#cors-menu-list{
 ul.nav li:hover ul#noti-menu-list,
 ul.nav li.sfHover ul#noti-menu-list{
 	margin-left: -263px;
+	-moz-box-shadow:    4px 4px 8px 0px #ccc;
+  	-webkit-box-shadow: 4px 4px 8px 0px #ccc;
+  	box-shadow:         4px 4px 8px 0px #ccc;
 }
 .menu-title-text-noti{
 	padding: 8px 10px;
@@ -275,7 +292,10 @@ ul.nav li a:hover{
 /* 名叫 nav 的 ul 下的所有 li 狀態為 hover 時，底下的 ul */
 /* 名叫 nav 的 ul 下的所有類別為 sfHover 的 li 底下所有的 ul */
 ul.nav li:hover ul, ul.nav li.sfHover ul{
-	margin-left: -50px;
+	/*margin-left: -50px;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+  	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  	box-shadow:         3px 3px 5px 6px #ccc;*/
 }
 
 

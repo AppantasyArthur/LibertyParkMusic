@@ -16,12 +16,21 @@ lpm.Global.prototype.checkLogin = function(){
 		$('#lrng-menu-item-bk').hide();
 		$('#lrng-menu-item-nt').hide();
 		
+		
 		$('#acnt-menu-item-profile').hide();
 		$('#acnt-menu-item-message').hide();
 		$('#acnt-menu-item-contact').hide();
 		
+		/*$('#lrng-menu-list').hover(function(){
+			
+			$(this).css('box-shadow', '3px 3px 5px 6px #ccc');
+			$(this).css('-webkit-box-shadow', '3px 3px 5px 6px #ccc');
+			$(this).css('-moz-box-shadow', '3px 3px 5px 6px #ccc');
+			
+		});*/
+		
 	}else{
-
+		
 		$('#acnt-menu-item-signin').hide();
 		$('#acnt-menu-item-signup').hide();
 		
@@ -32,10 +41,11 @@ lpm.Global.prototype.checkLogin = function(){
 lpm.Global.prototype.initMenu = function(){
 	
 	$('ul.nav').superfish({
-		//delay: 200,
+		delay: 600,
 		animation: {opacity: 'show'},
-		speed: 'fast',
-		speedOut: 'fast',
+		animationOut:  {opacity: 'hide'},
+		speed: 600,
+		speedOut: 1200,
 		autoArrows: false,
 		dropShadows: false
 	});
