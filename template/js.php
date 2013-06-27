@@ -3,3 +3,4 @@
 	<script src="../superfish/superfish.js"></script>
 	<script src="../js/global.js"></script>
 	<script src="../js/signin.js"></script>
+	<script src="../js/util.js"></script>

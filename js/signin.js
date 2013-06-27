@@ -1,3 +1,4 @@
+lpm = {};
 lpm.Signin = function(){};
 
 lpm.Signin.prototype.signinLPMwithFB = function(){

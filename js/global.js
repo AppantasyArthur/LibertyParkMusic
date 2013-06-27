@@ -1,12 +1,12 @@
-var lpm = {}; // namespace
-lpm.Global = function(pars){
+lpm = {}; // namespace
+function Global(pars){
 	
 	this.isLogin = pars.isLogin;
 	
 };
 
 //show hide function
-lpm.Global.prototype.checkLogin = function(){
+Global.prototype.checkLogin = function(){
 	
 	if(!this.isLogin){
 
@@ -38,7 +38,7 @@ lpm.Global.prototype.checkLogin = function(){
 	
 };
 
-lpm.Global.prototype.initMenu = function(){
+Global.prototype.initMenu = function(){
 	
 	$('ul.nav').superfish({
 		delay: 600,
